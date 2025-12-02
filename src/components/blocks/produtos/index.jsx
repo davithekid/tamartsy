@@ -6,42 +6,42 @@ const easeTransition = [0.25, 0.1, 0.25, 1];
 
 const Industries1 = ({
   title = "Produtos",
-  industryLabel = "Overview",
+  industryLabel = "Prévia",
 
-  industries = [
-    {
-      name: "Bolsas",
-      description:
-        "Revolutionary medical solutions and digital health platforms that improve patient outcomes and streamline healthcare delivery.",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
-      imageAlt: "Healthcare technology illustration",
-      url: "http://shadcnblocks.com/blocks",
-    },
-    {
-      name: "Tops",
-      description:
-        "Cutting-edge financial technology solutions that transform banking, payments, and investment management for the digital age.",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
-      imageAlt: "Financial technology illustration",
-      url: "http://shadcnblocks.com/blocks",
-    },
-    {
-      name: "Headpiece",
-      description:
-        "Comprehensive online retail platforms and marketplace solutions that drive sales and enhance customer experiences.",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
-      imageAlt: "E-commerce platform illustration",
-      url: "http://shadcnblocks.com/blocks",
-    },
-    {
-      name: "Saquinho para cyber shot",
-      description:
-        "Innovative learning management systems and educational technology that empower students and educators worldwide.",
-      image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-4.svg",
-      imageAlt: "Educational technology illustration",
-      url: "http://shadcnblocks.com/blocks",
-    },
-  ]
+ industries = [
+  {
+    name: "Bolsas",
+    description:
+      "Bolsas de alta qualidade que combinam estilo, funcionalidade e durabilidade para o uso diário.",
+    image: "./bolsa.jpeg",
+    imageAlt: "Ilustração de bolsa",
+    url: "http://shadcnblocks.com/blocks",
+  },
+  {
+    name: "Tops",
+    description:
+      "Tops modernos, confeccionados com atenção ao conforto, tendências e tecidos de qualidade para diversas ocasiões.",
+    image: "./bolsa.jpeg",
+    imageAlt: "Ilustração de top",
+    url: "http://shadcnblocks.com/blocks",
+  },
+  {
+    name: "Headpiece",
+    description:
+      "Acessórios para cabeça elegantes, projetados para realçar o estilo pessoal com conforto e sofisticação.",
+    image: "./bolsa.jpeg",
+    imageAlt: "Ilustração de acessório de cabeça",
+    url: "http://shadcnblocks.com/blocks",
+  },
+  {
+    name: "Saquinho para cyber shot",
+    description:
+      "Saquinhos protetores e práticos para câmeras digitais, garantindo segurança e facilidade no transporte do seu Cyber-shot.",
+    image: "./bolsa.jpeg",
+    imageAlt: "Ilustração de saquinho para câmera",
+    url: "http://shadcnblocks.com/blocks",
+  },
+]
 }) => {
   return (
     <section className="py-16">
@@ -53,7 +53,7 @@ const Industries1 = ({
             <a href={industry.url} key={index}>
               <motion.div
                 key={index}
-                className="bg-muted group relative overflow-hidden"
+                className=" group relative overflow-hidden rounded-2xl"
                 whileHover="hover"
                 initial="initial">
                 {/* Default state: Image and heading */}
@@ -76,9 +76,9 @@ const Industries1 = ({
                     <img
                       src={industry.image}
                       alt={industry.imageAlt}
-                      className="h-full w-full object-cover" />
+                      className="h-120 w-full object-cover opacity-50" />
                   </div>
-                  <h3 className="text-foreground absolute bottom-10 text-lg font-medium">
+                  <h3 className="text-foreground absolute bottom-10 text-lg font-extrabold">
                     {industry.name}
                   </h3>
                 </motion.div>

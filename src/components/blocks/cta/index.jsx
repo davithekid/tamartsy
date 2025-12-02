@@ -1,15 +1,14 @@
 import { Button } from "@/components/ui/button";
 
 const Cta10 = ({
-  heading = "Interessado?",
-  description = "Me chame no privado para efetuarmos sua comprinha!!",
-
+  heading = "Gostou de alguma peça?",
+  description = "Me envie uma mensagem no privado e vamos garantir que sua comprinha chegue direitinho até você!",
   buttons = {
     primary: {
-      text: "Contato",
-      url: "https://www.shadcnblocks.com",
+      text: "Falar comigo",
+      url: "https://www.shadcnblocks.com", 
     },
-  }
+  },
 }) => {
   return (
     <section className="py-8">

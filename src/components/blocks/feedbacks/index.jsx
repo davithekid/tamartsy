@@ -8,59 +8,60 @@ import React from "react";
 const testimonials = [
   {
     id: 1,
-    name: "Carlos Silva",
-    designation: "Gerente de Projetos",
-    company: "InovaTech",
+    name: "Carla Souza",
+    designation: "Cliente",
+    company: "N/A",
     testimonial:
-      "O Zenith revolucionou nossa organização! As integrações com Notion e Canva tornaram nosso fluxo de trabalho muito mais eficiente.",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+      "Comprei uma bolsa de crochê e fiquei encantada! A peça chegou linda, bem feita e com muito capricho.",
+    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
   },
   {
     id: 2,
-    name: "Ana Paula Mendes",
-    designation: "Empreendedora",
-    company: "Startup Brasil",
+    name: "Fernanda Lima",
+    designation: "Cliente",
+    company: "N/A",
     testimonial:
-      "Finalmente consigo centralizar todas minhas planilhas e metas em um só lugar. As templates personalizáveis são incríveis!",
+      "Os tops de crochê são maravilhosos! Super confortáveis, elegantes e entregues rapidinho. Recomendo muito!",
     avatar: "https://randomuser.me/api/portraits/women/6.jpg",
   },
   {
     id: 3,
-    name: "Ricardo Oliveira",
-    designation: "Designer Freelancer",
-    company: "CreativeStudio",
+    name: "Lucas Martins",
+    designation: "Cliente",
+    company: "N/A",
     testimonial:
-      "A integração premium com o Canva mudou completamente minha produtividade. Agora consigo gerenciar projetos e designs simultaneamente!",
+      "Adorei o saquinho para a minha câmera Cyber-shot. Protege bem e ainda é um charme! Atendimento excelente também.",
     avatar: "https://randomuser.me/api/portraits/men/3.jpg",
   },
   {
     id: 4,
-    name: "Fernanda Costa",
-    designation: "Estudante de MBA",
-    company: "FGV",
+    name: "Mariana Rocha",
+    designation: "Cliente",
+    company: "N/A",
     testimonial:
-      "Perfeito para organizar estudos e projetos acadêmicos. As agendas personalizáveis me ajudaram a triplicar minha produtividade!",
+      "Cada peça que recebo tem um detalhe especial. Dá para sentir o carinho e dedicação em cada ponto do crochê.",
     avatar: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     id: 5,
-    name: "Marcos Andrade",
-    designation: "CEO",
-    company: "TechSolutions",
+    name: "Rafael Oliveira",
+    designation: "Cliente",
+    company: "N/A",
     testimonial:
-      "O plano empresarial do Zenith com integrações ilimitadas foi o melhor investimento para nossa equipe. Colaboração simplificada!",
+      "Comprei um headpiece de crochê e estou apaixonado! Além da qualidade, a entrega foi super rápida e o atendimento muito simpático.",
     avatar: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     id: 6,
-    name: "Juliana Santos",
-    designation: "Product Manager",
-    company: "DigitalLab",
+    name: "Juliana Campos",
+    designation: "Cliente",
+    company: "N/A",
     testimonial:
-      "A interface intuitiva e as integrações com ferramentas premium tornaram o Zenith indispensável para nosso dia a dia!",
+      "Amei todas as peças que recebi! Além de lindas, são práticas e feitas com muito cuidado. Super recomendo para quem ama crochê artesanal.",
     avatar: "https://randomuser.me/api/portraits/women/2.jpg",
   },
 ];
+
 
 const Testimonial04 = () => {
   return (
@@ -160,7 +161,6 @@ const TestimonialList = ({ testimonials }) =>
         </div>
         <Button variant="ghost" size="icon" asChild>
           <Link href="#" target="_blank">
-            <TwitterLogo className="w-4 h-4" />
           </Link>
         </Button>
       </div>

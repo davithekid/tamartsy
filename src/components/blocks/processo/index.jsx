@@ -4,27 +4,27 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 
 const Process1 = () => {
-  const process = [
-    {
-      step: "01",
-      title: "Navegue",
-      description:
-        "We begin by understanding your business goals, target audience, and current challenges. This phase involves research, analysis, and strategic planning to identify opportunities.",
-    },
-    {
-      step: "02",
-      title: "Interessado? entre em contato e compre com a gente",
-      description:
-        "Based on our findings, we develop a comprehensive strategy that aligns with your objectives. This includes defining the approach, timeline, and key milestones for success.",
-    },
-    {
-      step: "03",
-      title: "Entregamos para você",
-      description:
-        "We bring the strategy to life through careful implementation and development. Our team works collaboratively to ensure every detail meets your requirements and standards.",
-    },
-   
-  ];
+const process = [
+  {
+    step: "01",
+    title: "Navegue pelos produtos",
+    description:
+      "Explore nossa coleção de peças de crochê feitas à mão. Veja fotos, detalhes e se encante com cada item cuidadosamente produzido.",
+  },
+  {
+    step: "02",
+    title: "Interessou? Entre em contato!",
+    description:
+      "Se algum produto chamou sua atenção, envie uma mensagem pelo nosso canal de contato. Tire dúvidas, peça mais informações e finalize sua compra de forma rápida e prática.",
+  },
+  {
+    step: "03",
+    title: "Receba em casa",
+    description:
+      "Após a compra, nós preparamos sua peça com todo cuidado e entregamos diretamente na sua casa. Qualidade e carinho em cada detalhe!",
+  },
+];
+
 
   return (
     <section className="py-12">
