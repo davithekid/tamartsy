@@ -19,16 +19,15 @@ export default function Hero() {
           "inset-x-0 h-full skew-y-12"
         )} />
       <div className="relative z-10 text-center max-w-3xl">
-        <Badge variant="secondary" className="rounded-full py-1 border-border" asChild>
-          <Link href="#">
+        <Badge variant="secondary" className="rounded-full py-1 border-border font-serif">
             since 2025 <ArrowUpRight className="ml-1 size-4" />
-          </Link>
         </Badge>
         <Image
           src={'/logo.svg'}
           width={600}
           height={600}
           className="mx-auto object-cover"
+          alt="logo"
         />
         <p className="md:text-lg text-foreground/80">
           Tudo para deixar você no estilo que a cena precisa!.

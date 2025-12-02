@@ -11,7 +11,7 @@ const Cta10 = ({
   },
 }) => {
   return (
-    <section className="py-8">
+    <section className="mt-8 mb-1">
       <div className="">
         <div
           className="bg-accent flex w-full flex-col gap-16 overflow-hidden rounded-lg p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-12">

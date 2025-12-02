@@ -46,7 +46,7 @@ const Industries1 = ({
   return (
     <section className="py-16">
       <div className="container">
-        <h2 className="text-foreground mb-8 text-3xl font-medium">{title}</h2>
+        <h2 className="text-foreground mb-8 text-4xl font-bold">{title}</h2>
 
         <div className="grid grid-cols-1 gap-1 lg:grid-cols-2 xl:grid-cols-4">
           {industries.map((industry, index) => (

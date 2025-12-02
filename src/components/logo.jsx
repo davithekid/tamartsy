@@ -5,5 +5,6 @@ export const Logo = () => (
           src={'/logo.svg'}
           width={80}
           height={80}
+          alt="logo"
         />
 );
