@@ -12,8 +12,8 @@ const Cta10 = ({
   }
 }) => {
   return (
-    <section className="py-32">
-      <div className="container">
+    <section className="py-8">
+      <div className="">
         <div
           className="bg-accent flex w-full flex-col gap-16 overflow-hidden rounded-lg p-8 md:rounded-xl lg:flex-row lg:items-center lg:p-12">
           <div className="flex-1">

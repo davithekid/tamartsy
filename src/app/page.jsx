@@ -15,13 +15,11 @@ export default function Home() {
 
       <section className="mx-auto container">
         <article>
-          <Industries1/>
+          <Industries1 />
         </article>
       </section>
 
-      <section>
-        <Cta10/>
-      </section>
+      <Cta10 />
     </>
   );
 }

@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -23,11 +24,13 @@ export default function Hero() {
             since 2025 <ArrowUpRight className="ml-1 size-4" />
           </Link>
         </Badge>
-        <h1
-          className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
-          tam artsy
-        </h1>
-        <p className="mt-6 md:text-lg text-foreground/80">
+        <Image
+          src={'/logo.svg'}
+          width={600}
+          height={600}
+          className="mx-auto object-cover"
+        />
+        <p className="md:text-lg text-foreground/80">
           Tudo para deixar você no estilo que a cena precisa!.
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
