@@ -64,7 +64,7 @@ export const NavMenu = (props) => (
           asChild
           className={`${navigationMenuTriggerStyle()} font-bold tracking-widest uppercase hover:text-primary hover:underline underline-offset-8 transition-all px-4`}
         >
-          <Link href="#">Sobre</Link>
+          <Link href="/sobre">Sobre</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
 
