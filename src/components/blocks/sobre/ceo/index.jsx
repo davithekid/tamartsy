@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { DribbbleIcon, TwitchIcon, TwitterIcon } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card"; // Importação do Card para o testemunho
+import { DribbbleIcon, TwitchIcon, TwitterIcon, Quote } from "lucide-react"; // Adicionada a Lucide 'Quote'
 import Image from "next/image";
 import Link from "next/link";
+import { Services4 } from "../objetivos";
 
 const teamMembers = [
   {
@@ -13,6 +15,23 @@ const teamMembers = [
   },
 ];
 
+const FounderQuote = () => {
+  return (
+    <Card className="col-span-2 h-full flex flex-col justify-between p-6 bg-primary/5 border-primary/20 shadow-lg">
+      <CardContent className="p-0 space-y-4">
+        <Quote className="h-8 w-8 text-primary/80" />
+        <p className="text-xl sm:text-2xl font-serif leading-relaxed text-foreground">
+          "A Tam Artsy nasceu de um desejo profundo de unir a **arte do crochê com a moda moderna**. Meu objetivo não é apenas vender uma peça, mas sim entregar uma **extensão do seu estilo**, algo que carregue a energia e a história de ter sido feito à mão. Cada ponto é um passo na realização de um sonho, e a escala para mim é ver o crochê feito com paixão se espalhando pelo Brasil."
+        </p>
+        <div className="pt-4">
+          <p className="font-semibold text-lg text-primary">Tamires</p>
+          <p className="text-sm text-muted-foreground">Fundadora e Designer Chefe</p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
 const Team = () => {
   return (
     <div
@@ -20,37 +39,38 @@ const Team = () => {
       <div className="text-center max-w-2xl mx-auto">
         <b
           className="text-center text-muted-foreground text-sm font-semibold uppercase">
-          We&apos;re hiring!
+          Sobre a tam artsy!
         </b>
         <h2 className="mt-3 text-4xl sm:text-5xl font-semibold tracking-tighter">
-          Meet Our Team
+          Conheça por trás das telas!
         </h2>
         <p className="mt-6 text-base sm:text-lg text-muted-foreground">
-          Our philosophy is simple — hire a team of diverse, passionate people
-          and foster a culture that empowers you to do you best work.
+          Nascido de um simples hobby, hoje eu amo fazer outras pessoas felizes e estilosas a partir do crochê.
         </p>
-        <div
-          className="mt-8 flex flex-col sm:flex-row-reverse sm:justify-center gap-3">
-          <Button size="lg">Open Positions</Button>
-          <Button size="lg" variant="outline">
-            About Us
-          </Button>
-        </div>
       </div>
+      
+      {/* O grid foi ajustado para ter 1 coluna em mobile e 2 colunas em telas grandes */}
       <div
-        className="flex justify-center gap-x-8 gap-y-12">
+        className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-12">
+        
+        {/* Coluna 1: Informações da Tamires */}
         {teamMembers.map((member) => (
           <div key={member.name}>
             <Image
               src={member.imageUrl}
               alt={member.name}
               className="w-full aspect-square rounded-lg object-cover bg-secondary"
-              width={300}
-              height={300} />
+              width={500}
+              height={500} />
             <h3 className="mt-4 text-lg font-semibold">{member.name}</h3>
             <p className="text-muted-foreground text-sm">{member.title}</p>
-            <p className="mt-3">{member.bio}</p>
+            {/* O bio original de emprego foi substituído por uma descrição mais adequada ao crochê */}
+            <p className="mt-3 text-muted-foreground">
+              Minha missão é transformar a tradição do crochê em peças modernas e cheias de personalidade. 
+              Cada bolsa ou acessório é feito com fios de alta qualidade e dedicação total para garantir que você tenha um item único.
+            </p>
             <div className="mt-4 flex items-center gap-2.5">
+              {/* Botões de Mídias Sociais */}
               <Button
                 className="bg-accent hover:bg-accent text-muted-foreground shadow-none"
                 size="icon"
@@ -78,6 +98,9 @@ const Team = () => {
             </div>
           </div>
         ))}
+
+        {/* Coluna 2: Testemunho (Card de Citação) */}
+        <Services4/>
       </div>
     </div>
   );

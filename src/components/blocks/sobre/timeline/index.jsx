@@ -1,32 +1,27 @@
 import { Badge } from "@/components/ui/badge";
-import { Building2, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react"; // Building2 não é mais necessário
 
 const experiences = [
   {
-    title: "Senior Full Stack Developer",
-    company: "TechCorp Solutions",
-    period: "2023 - Present",
+    title: "Prefácio",
+    period: "2020 - 2024",
     description:
-      "Led the development of enterprise-scale web applications, mentored junior developers, and implemented best practices for code quality and performance optimization.",
-    technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB"],
+      "Tudo começou como um hobby relaxante. O crochê deixou de ser apenas um passatempo e se tornou uma paixão genuína, onde cada laçada e cada ponto representavam uma forma de arte e expressão pessoal.",
   },
   {
-    title: "Full Stack Developer",
-    company: "Digital Innovations Inc",
-    period: "2021 - 2023",
+    title: "O Salto para o Empreendedorismo",
+    period: "2025",
     description:
-      "Developed and maintained multiple client projects, implemented responsive designs, and integrated third-party APIs for enhanced functionality.",
-    technologies: ["React", "Express.js", "PostgreSQL", "Docker", "Redis"],
+      "Percebendo o carinho e a procura por peças exclusivas feitas à mão, decidi transformar a paixão em um negócio. Este foi o momento de planejar e estruturar a tam artsy, definindo nosso propósito: oferecer produtos únicos, duráveis e cheios de história, que resgatam o valor do feito à mão.",
   },
   {
-    title: "Frontend Developer",
-    company: "WebTech Studios",
-    period: "2018 - 2021",
+    title: "Lançamento da Loja Virtual",
+    period: "12/2025",
     description:
-      "Created responsive and interactive user interfaces, collaborated with designers, and optimized application performance.",
-    technologies: ["React", "JavaScript", "SASS", "Webpack", "Jest"],
+      "Com a ajuda de amigos e muita dedicação, a loja virtual saiu do papel! Hoje, a 'experiência' é colocar toda a técnica e carinho na curadoria e confecção de cada produto. Priorizamos a **qualidade dos materiais**, o **acabamento impecável** e a **sustentabilidade**, garantindo que cada peça de crochê chegue até você como um presente especial.",
   },
 ];
+
 
 export default function Timeline() {
   return (
@@ -35,7 +30,11 @@ export default function Timeline() {
         {/* Timeline line */}
         <div className="absolute left-0 top-4 bottom-0 border-l-2" />
 
-        {experiences.map(({ company, description, period, technologies, title }, index) => (
+        {/* Ajuste na desestruturação: 
+          - Removido 'company' e 'technologies'.
+          - Adicionado 'keywords'.
+        */}
+        {experiences.map(({ description, period, keywords, title }, index) => (
           <div key={index} className="relative pl-8 pb-12 last:pb-0">
             {/* Timeline dot */}
             <div
@@ -43,13 +42,10 @@ export default function Timeline() {
 
             {/* Content */}
             <div className="space-y-3">
-              <div className="flex items-center gap-2.5">
-                <div
-                  className="shrink-0 h-9 w-9 bg-accent rounded-full flex items-center justify-center">
-                  <Building2 className="h-5 w-5 text-muted-foreground" />
-                </div>
-                <span className="text-base font-medium">{company}</span>
-              </div>
+              {/* Removida a seção de 'company' para focar na jornada,
+                mantendo a bolha visual da linha do tempo.
+              */}
+              
               <div>
                 <h3 className="text-xl font-semibold tracking-[-0.01em]">
                   {title}
@@ -62,13 +58,8 @@ export default function Timeline() {
               <p className="text-sm sm:text-base text-muted-foreground text-pretty">
                 {description}
               </p>
-              <div className="flex flex-wrap gap-2">
-                {technologies.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="rounded-full">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
+              
+
             </div>
           </div>
         ))}

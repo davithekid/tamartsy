@@ -16,11 +16,10 @@ export default function Home() {
         <Hero />
       </main>
 
-      <section className="mx-auto container">
+      <section className="mx-auto container bg-url">
         <article>
           <Industries1 />
         </article>
-
         <article>
           <Process1 />
         </article>
