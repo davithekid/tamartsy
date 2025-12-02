@@ -34,12 +34,12 @@ const Footer = () => {
       <footer className="border-t">
         <div className="max-w-(--breakpoint-xl) mx-auto">
           <div className="py-12 flex flex-col justify-start items-center">
-              <Image
+            <Image
               src={'/logo.svg'}
               width={80}
               height={80}
+              alt="logo"
             />
-
             <ul className="mt-6 flex items-center gap-4 flex-wrap">
               {footerLinks.map(({ title, href }) => (
                 <li key={title}>
@@ -57,7 +57,7 @@ const Footer = () => {
             <span className="text-muted-foreground">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
-                tam artsy 
+                tam artsy
               </Link>
               . Todos os direitos reservados.
             </span>

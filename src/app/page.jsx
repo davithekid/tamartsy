@@ -3,6 +3,7 @@ import Testimonial04 from "@/components/blocks/feedbacks";
 import Hero from "@/components/blocks/hero/hero";
 import { Process1 } from "@/components/blocks/processo";
 import { Industries1 } from "@/components/blocks/produtos";
+import Footer from "@/components/footer/footer";
 import Navbar from "@/components/ui/navbar";
 
 export default function Home() {
@@ -28,10 +29,11 @@ export default function Home() {
           <Testimonial04 />
         </article>
       </section>
-
-
-
       <Cta10 />
+
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

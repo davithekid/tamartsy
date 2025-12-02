@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import Footer from "@/components/footer/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,7 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <head />
+      <head>
+        <link rel="icon" href="/logo.svg" sizes="any" />
+      </head>
       <body>
         <ThemeProvider
           attribute="class"
@@ -31,7 +32,6 @@ export default function RootLayout({ children }) {
         >
           {children}
         </ThemeProvider>
-          <Footer />
       </body>
     </html>
   );
