@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Tamires",
     title: "Fundadora & CEO",
     bio: "Minha missão é transformar a tradição do crochê em peças modernas e cheias de personalidade. Cada bolsa ou acessório é feito com fios de alta qualidade e dedicação total para garantir que você tenha um item único.",
-    imageUrl: "/bolsa.jpeg",
+    imageUrl: "/fundadora.jpeg",
   },
 ];
 

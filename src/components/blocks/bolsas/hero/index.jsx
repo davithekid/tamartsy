@@ -15,7 +15,7 @@ const storeData = {
         {
             id: 1,
             name: 'Bolsa Baguete',
-            image: './bolsa.jpeg',
+            image: './modelo.png',
             tag: 'Best Seller',
         },
         {
