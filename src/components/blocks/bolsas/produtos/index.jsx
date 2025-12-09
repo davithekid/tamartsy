@@ -8,7 +8,7 @@ const allProducts = [
   { id: 3, title: 'Eclax Cage Pack', image: 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=60&w=600&auto=format&fit=crop', price: 399, rating: 5, category: 'mais vendidos' },
   { id: 4, title: 'Bolsa Baguete', image: './bolsa-baguete.jpeg', price: 299, rating: 5, category: 'baguete' },
   { id: 5, title: 'Bolsa Duo', image: './bolsa-duo.jpeg', price: 349, rating: 4, category: 'duo' },
-  { id: 6, title: 'Todas as Bolsas', image: './todas-bolsas.jpeg', price: 499, rating: 5, category: 'todas' },
+  { id: 6, title: 'Bolsa de Praia', image: './todas-bolsas.jpeg', price: 499, rating: 5, category: 'todas' },
 ]
 
 const categories = ['todas', 'baguete', 'duo']
@@ -16,11 +16,15 @@ const categories = ['todas', 'baguete', 'duo']
 const ProductCard2 = () => {
   const [filter, setFilter] = useState('todas')
 
-  const renderProducts = (items, columns = 3) => (
-    <div className={`grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-${columns}`}>
+  const renderProducts = (items, cols) => (
+    <div
+      className={`grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 ${
+        cols === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
+      }`}
+    >
       {items.map((product) => (
         <Card key={product.id} className='group overflow-hidden transition-all hover:shadow-lg'>
-          <CardContent className='space-y-4'>
+          <CardContent className='space-y-4 p-4'>
             <div className='overflow-hidden rounded-md'>
               <img
                 src={product.image}
@@ -34,7 +38,7 @@ const ProductCard2 = () => {
               <CardTitle className='line-clamp-1 text-lg font-semibold text-balance sm:text-xl'>
                 {product.title}
               </CardTitle>
-              <p className='text-lg font-semibold sm:text-xl'>${product.price.toFixed(2)}</p>
+              <p className='text-lg font-bold text-primary sm:text-xl'>R$ {product.price.toFixed(2).replace('.', ',')}</p>
             </div>
           </CardContent>
         </Card>
@@ -46,6 +50,7 @@ const ProductCard2 = () => {
 
   return (
     <section className='mx-auto max-w-7xl space-y-12 px-4 py-12 sm:px-8'>
+      
       <div className='space-y-8'>
         <header className='space-y-2'>
           <h2 className='text-3xl font-bold text-balance sm:text-4xl'>Sucesso de vendas!</h2>
@@ -70,7 +75,7 @@ const ProductCard2 = () => {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-md font-medium transition-colors ${
-                  filter === cat ? 'bg-primary text-muted' : 'bg-secondary'
+                  filter === cat ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
                 }`}
               >
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}

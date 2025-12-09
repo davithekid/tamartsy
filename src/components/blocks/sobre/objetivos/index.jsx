@@ -1,82 +1,70 @@
 "use client";
-
-import { Code, Cog, PenTool, Shrub } from "lucide-react";
+import { Sparkles, HeartHandshake, Leaf, Rocket } from "lucide-react";
 
 const Services4 = () => {
   const services = [
     {
-      icon: <Cog className="h-6 w-6" />,
-      title: "Product Strategy",
+      icon: <Sparkles className="h-6 w-6" />,
+      title: "Estilo e Tendência",
       description:
-        "Strategic planning and market positioning to ensure your product meets user needs and business goals.",
-      items: ["Market Research", "User Personas", "Competitive Analysis"],
+        "Oferecer peças de crochê que são tendências de moda, elevando o estilo autêntico do nosso público com itens exclusivos e 'aesthetic'.",
+      items: ["Lançamento de Coleções Sazonais", "Crochê 'Instagramável'", "Peças Versáteis (Bolsas, Tops, Headpieces)"],
     },
     {
-      icon: <PenTool className="h-6 w-6" />,
-      title: "Design",
+      icon: <HeartHandshake className="h-6 w-6" />,
+      title: "Conexão e Comunidade",
       description:
-        "Beautiful, user-centered designs that create engaging experiences across all platforms.",
-      items: ["UI/UX Design", "Prototyping", "Interaction Design"],
+        "Construir uma comunidade engajada, promovendo a criatividade e a valorização do 'feito à mão' entre os jovens.",
+      items: ["Conteúdo de DIY/Crochê", "Interação nas Redes Sociais (TikTok/Insta)", "Experiência de Compra Personalizada"],
     },
     {
-      icon: <Code className="h-6 w-6" />,
-      title: "Web Development",
+      icon: <Leaf className="h-6 w-6" />,
+      title: "Valorização do Artesanal",
       description:
-        "Modern, scalable web applications built with the latest technologies and best practices.",
-      items: ["Frontend Dev", "Backend Dev", "API Integration"],
+        "Destacar o processo artesanal, a sustentabilidade e a qualidade única do crochê, incentivando o consumo consciente.",
+      items: ["Transparência no Processo", "Foco em Materiais de Qualidade", "Peças Duráveis e Exclusivas"],
     },
     {
-      icon: <Shrub className="h-6 w-6" />,
-      title: "Marketing",
+      icon: <Rocket className="h-6 w-6" />,
+      title: "Crescimento de Marca",
       description:
-        "Data-driven strategies to launch successfully and scale your product efficiently.",
-      items: ["SEO Strategy", "Analytics & Data", "A/B Testing"],
+        "Expandir o alcance da marca no mercado jovem, garantindo uma presença digital forte e eficiente.",
+      items: ["Parcerias com Influencers", "Otimização para Mobile (E-commerce)", "Novos Nichos de Produtos (Acessórios, Casa)"],
     },
   ];
 
   return (
-    <section className="">
-      <div className="container">
-        <div className="mx-auto max-w-6xl space-y-12">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-              Objetivos
-            </h2>
-            <p
-              className="text-muted-foreground mx-auto max-w-2xl text-lg tracking-tight md:text-xl">
-              We craft digital experiences that captivate and convert, bringing
-              your vision to life.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-8">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="border-border space-y-6 rounded-lg border p-8 transition-shadow hover:shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="bg-muted rounded-full p-3">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold">{service.title}</h3>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
-                <div className="space-y-2">
-                  {service.items.map((item, itemIndex) => (
-                    <div key={itemIndex} className="flex items-center gap-2">
-                      <div className="bg-foreground h-1.5 w-1.5 rounded-full" />
-                      <span className="text-sm font-medium">{item}</span>
-                    </div>
-                  ))}
-                </div>
+    <div className="space-y-6">
+      <h3 className="text-2xl font-bold tracking-tight text-center lg:text-left pt-6 lg:pt-0">
+        Nossos Objetivos na Missão Crochê
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className="border border-border p-6 rounded-xl transition-shadow hover:shadow-lg hover:shadow-primary/10 space-y-4"
+          >
+            <div className="flex items-center gap-3">
+              <div className="bg-primary/10 text-primary rounded-full p-3">
+                {service.icon}
               </div>
-            ))}
+              <h4 className="text-lg font-semibold">{service.title}</h4>
+            </div>
+            <p className="text-muted-foreground text-sm">
+              {service.description}
+            </p>
+            <ul className="space-y-1 text-sm pt-2">
+              {service.items.map((item, itemIndex) => (
+                <li key={itemIndex} className="flex items-center gap-2 text-muted-foreground/80">
+                  <div className="bg-primary h-1.5 w-1.5 rounded-full" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,6 +1,8 @@
 "use client";;
 import { motion } from "framer-motion";
 import { Plus } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const easeTransition = [0.25, 0.1, 0.25, 1];
 
@@ -8,40 +10,40 @@ const Industries1 = ({
   title = "Produtos",
   industryLabel = "Prévia",
 
- industries = [
-  {
-    name: "Bolsas",
-    description:
-      "Bolsas de alta qualidade que combinam estilo, funcionalidade e durabilidade para o uso diário.",
-    image: "./bolsa.jpeg",
-    imageAlt: "Ilustração de bolsa",
-    url: "http://shadcnblocks.com/blocks",
-  },
-  {
-    name: "Tops",
-    description:
-      "Tops modernos, confeccionados com atenção ao conforto, tendências e tecidos de qualidade para diversas ocasiões.",
-    image: "./bolsa.jpeg",
-    imageAlt: "Ilustração de top",
-    url: "http://shadcnblocks.com/blocks",
-  },
-  {
-    name: "Headpiece",
-    description:
-      "Acessórios para cabeça elegantes, projetados para realçar o estilo pessoal com conforto e sofisticação.",
-    image: "./bolsa.jpeg",
-    imageAlt: "Ilustração de acessório de cabeça",
-    url: "http://shadcnblocks.com/blocks",
-  },
-  {
-    name: "Saquinho para cyber shot",
-    description:
-      "Saquinhos protetores e práticos para câmeras digitais, garantindo segurança e facilidade no transporte do seu Cyber-shot.",
-    image: "./bolsa.jpeg",
-    imageAlt: "Ilustração de saquinho para câmera",
-    url: "http://shadcnblocks.com/blocks",
-  },
-]
+  industries = [
+    {
+      name: "Bolsas",
+      description:
+        "Bolsas de alta qualidade que combinam estilo, funcionalidade e durabilidade para o uso diário.",
+      image: "./bolsa.jpeg",
+      imageAlt: "Ilustração de bolsa",
+      url: "http://shadcnblocks.com/blocks",
+    },
+    {
+      name: "Tops",
+      description:
+        "Tops modernos, confeccionados com atenção ao conforto, tendências e tecidos de qualidade para diversas ocasiões.",
+      image: "./bolsa.jpeg",
+      imageAlt: "Ilustração de top",
+      url: "http://shadcnblocks.com/blocks",
+    },
+    {
+      name: "Headpiece",
+      description:
+        "Acessórios para cabeça elegantes, projetados para realçar o estilo pessoal com conforto e sofisticação.",
+      image: "./bolsa.jpeg",
+      imageAlt: "Ilustração de acessório de cabeça",
+      url: "http://shadcnblocks.com/blocks",
+    },
+    {
+      name: "Saquinho para cyber shot",
+      description:
+        "Saquinhos protetores e práticos para câmeras digitais, garantindo segurança e facilidade no transporte do seu Cyber-shot.",
+      image: "./bolsa.jpeg",
+      imageAlt: "Ilustração de saquinho para câmera",
+      url: "http://shadcnblocks.com/blocks",
+    },
+  ]
 }) => {
   return (
     <section className="py-16">
@@ -130,6 +132,13 @@ const Industries1 = ({
               </motion.div>
             </a>
           ))}
+        </div>
+        <div className="flex justify-center py-3">
+          <Button>
+            <Link href={"/produtos"}>
+            Visualizar catálogo completo
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
