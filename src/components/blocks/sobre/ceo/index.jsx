@@ -132,7 +132,7 @@ const CEOAndObjectives = () => {
           Sobre a Tam Artsy!
         </p>
         <h2 className="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
-          Conheça a Visionária e Nossa Missão
+          Conheça Nossa Missão
         </h2>
         <p className="mt-6 text-lg text-muted-foreground">
           Nascido de um simples hobby, hoje eu amo fazer outras pessoas felizes e estilosas a partir do crochê.

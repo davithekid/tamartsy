@@ -1,127 +1,135 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { MailIcon, MapPinIcon, MessageCircle, PhoneIcon } from "lucide-react";
-import Link from "next/link";
+} from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import {
+  MailIcon,
+  MessageCircle,
+  PhoneIcon,
+} from "lucide-react"
+import Link from "next/link"
 
 const Contact = () => (
-  <div className="min-h-screen flex items-center justify-center py-16">
-    <div className="w-full max-w-(--breakpoint-xl) mx-auto px-6 xl:px-0">
-      <b className="text-muted-foreground uppercase font-semibold text-sm">
-        Entre em contato!
-      </b>
-      <h2 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">
-        Envie um e-mail para eu possa te ajudar!
+  <div className="flex min-h-screen items-center justify-center py-20">
+    <div className="mx-auto w-full max-w-(--breakpoint-xl) px-6 xl:px-0">
+
+      <span className="text-sm font-semibold uppercase text-muted-foreground">
+        Entre em contato
+      </span>
+
+      <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
+        Envie uma mensagem!
       </h2>
-      <p className="mt-3 text-base sm:text-lg text-muted-foreground">
-        We&apos;d love to hear from you. Please fill out this form or shoot us
-        an email.
+
+      <p className="mt-3 max-w-[60ch] text-base text-muted-foreground sm:text-lg">
+        Fique à vontade para falar comigo. Vou adorar conhecer sua ideia
+        ou tirar suas dúvidas.
       </p>
 
-      <div className="mt-16 flex flex-col lg:flex-row gap-16 md:gap-10">
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:col-span-2 *:border *:p-6 *:bg-background gap-1 border p-1 bg-muted max-w-3xl w-full">
+      <div className="mt-16 flex flex-col gap-16 md:gap-10 lg:flex-row">
+        {/* Contact Info */}
+        <div className="grid w-full max-w-3xl items-center grid-cols-1 gap-1 border bg-muted p-1 sm:grid-cols-2 lg:col-span-2 [&>*]:border [&>*]:bg-background [&>*]:p-6">
+
           <div>
-            <div
-              className="h-12 w-12 flex items-center justify-center bg-foreground/5 dark:bg-foreground/10 text-foreground border border-foreground/3 rounded-xl">
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border bg-foreground/5 text-foreground dark:bg-foreground/10">
               <MailIcon />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">e-mail</h3>
+
+            <h3 className="mt-6 text-xl font-semibold">E-mail</h3>
+
             <p className="my-2.5 text-muted-foreground">
-              Para eu te ajudar.
+              Me envie um e-mail que respondo o quanto antes.
             </p>
+
             <Link
+              href="mailto:tami@gmail.com"
               className="font-medium text-primary"
-              href="mailto:akashmoradiya3444@gmail.com">
+            >
               tami@gmail.com
             </Link>
           </div>
-          <div>
-            <div
-              className="h-12 w-12 flex items-center justify-center bg-foreground/5 dark:bg-foreground/10 text-foreground border border-foreground/3 rounded-xl">
-              <MessageCircle />
-            </div>
-            <h3 className="mt-6 font-semibold text-xl">Instagram</h3>
-            <p className="my-2.5 text-muted-foreground">
-              Our friendly team is here to help.
-            </p>
-            <Link className="font-medium text-primary" href="#">
-              @tamartsy.
-            </Link>
-          </div>
 
           <div>
-            <div
-              className="h-12 w-12 flex items-center justify-center bg-foreground/5 dark:bg-foreground/10 text-foreground border border-foreground/3 rounded-xl">
-              <PhoneIcon />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl border bg-foreground/5 text-foreground dark:bg-foreground/10">
+              <MessageCircle />
             </div>
-            <h3 className="mt-6 font-semibold text-xl">Phone</h3>
+
+            <h3 className="mt-6 text-xl font-semibold">Instagram</h3>
+
             <p className="my-2.5 text-muted-foreground">
-              Mon-Fri from 8am to 5pm.
+              Para tirar suas dúvidas ou comprar um item, me chame no instagram!
             </p>
+
             <Link
+              href="#"
               className="font-medium text-primary"
-              href="tel:akashmoradiya3444@gmail.com">
-              +1 (555) 000-0000
+            >
+              @tam.artsy
             </Link>
           </div>
         </div>
 
-        {/* Form */}
-        <div className="border p-1 bg-muted w-full max-w-lg">
-          <Card
-            className="relative isolate shadow-none lg:ms-auto rounded-none">
+        <div className="w-full max-w-lg border bg-muted p-1">
+          <Card className="rounded-none shadow-none lg:ms-auto">
             <CardHeader>
-              <CardTitle>Contate-me</CardTitle>
+              <CardTitle>Fale comigo</CardTitle>
               <CardDescription>
-                Eu quero ouvir você falar.
+                Preencha o formulário e entrarei em contato.
               </CardDescription>
             </CardHeader>
+
             <CardContent className="mt-2">
               <form>
-                <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
-                  <div className="col-span-2 sm:col-span-1">
+                <div className="grid gap-x-8 gap-y-6 md:grid-cols-2">
+
+                  <div>
                     <Label htmlFor="firstName">Primeiro nome</Label>
                     <Input
-                      placeholder="First name"
                       id="firstName"
-                      className="mt-2 bg-white h-10 shadow-none" />
+                      placeholder="Seu primeiro nome"
+                      className="mt-2 h-10 bg-white shadow-none"
+                    />
                   </div>
-                  <div className="col-span-2 sm:col-span-1">
-                    <Label htmlFor="lastName">Segundo nome</Label>
+
+                  <div>
+                    <Label htmlFor="lastName">Sobrenome</Label>
                     <Input
-                      placeholder="Last name"
                       id="lastName"
-                      className="mt-2 bg-white h-10 shadow-none" />
+                      placeholder="Seu sobrenome"
+                      className="mt-2 h-10 bg-white shadow-none"
+                    />
                   </div>
-                  <div className="col-span-2">
-                    <Label htmlFor="email">Email para eu retornar</Label>
+
+                  <div className="md:col-span-2">
+                    <Label htmlFor="email">E-mail para contato</Label>
                     <Input
-                      type="email"
-                      placeholder="Email"
                       id="email"
-                      className="mt-2 bg-white h-10 shadow-none" />
+                      type="email"
+                      placeholder="seu@email.com"
+                      className="mt-2 h-10 bg-white shadow-none"
+                    />
                   </div>
-                  <div className="col-span-2">
+
+                  <div className="md:col-span-2">
                     <Label htmlFor="message">Mensagem</Label>
                     <Textarea
                       id="message"
-                      placeholder="Message"
+                      placeholder="Escreva sua mensagem aqui..."
+                      rows={6}
                       className="mt-2 bg-white shadow-none"
-                      rows={6} />
+                    />
                   </div>
                 </div>
+
                 <Button className="mt-6 w-full" size="lg">
-                  Submit
+                  Enviar mensagem
                 </Button>
               </form>
             </CardContent>
@@ -130,6 +138,6 @@ const Contact = () => (
       </div>
     </div>
   </div>
-);
+)
 
-export default Contact;
+export default Contact

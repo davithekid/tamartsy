@@ -1,9 +1,5 @@
 import { Separator } from "@/components/ui/separator";
 import {
-  DribbbleIcon,
-  GithubIcon,
-  TwitchIcon,
-  TwitterIcon,
   InstagramIcon
 } from "lucide-react";
 import Image from "next/image";
@@ -11,20 +7,36 @@ import Link from "next/link";
 
 const footerLinks = [
   {
-    title: "Home",
-    href: "#",
+    title: "Início",
+    href: "/",
   },
   {
     title: "Produtos",
-    href: "#",
+    href: "/produtos",
+  },
+  {
+    title: "Bolsas",
+    href: "/bolsas",
+  },
+  {
+    title: "Tops",
+    href: "/tops",
+  },
+  {
+    title: "Headpieces",
+    href: "/headpieces",
+  },
+  {
+    title: "Variados",
+    href: "/variados",
   },
   {
     title: "Sobre",
-    href: "#",
+    href: "/sobre",
   },
   {
     title: "Contato",
-    href: "#",
+    href: "/contato",
   },
 ];
 
