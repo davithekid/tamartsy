@@ -1,49 +1,62 @@
-import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { ArrowUpRight, CirclePlay } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import AnimatedGridPattern from "@/components/ui/animated-grid-pattern"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { ArrowUpRight, CirclePlay } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Hero() {
   return (
-    <div
-      className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-6">
       <AnimatedGridPattern
         numSquares={30}
         maxOpacity={0.1}
         duration={3}
         className={cn(
           "mask-[radial-gradient(500px_circle_at_center,white,transparent)]",
-          "inset-x-0 h-full skew-y-12"
-        )} />
-      <div className="relative z-10 text-center max-w-3xl">
-        <Badge variant="secondary" className="rounded-full py-1 border-border font-serif">
-            desde 2025 <ArrowUpRight className="ml-1 size-4" />
+          "inset-x-0 h-full skew-y-6 md:skew-y-12"
+        )}
+      />
+
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
+        <Badge
+          variant="secondary"
+          className="rounded-full border-border py-1 font-serif"
+        >
+          desde 2025 <ArrowUpRight className="ml-1 h-4 w-4" />
         </Badge>
+
         <Image
-          src={'/logo.svg'}
-          width={600}
-          height={600}
-          className="mx-auto object-cover"
+          src="/logo.svg"
+          width={420}
+          height={420}
           alt="logo"
+          priority
+          className="mx-auto w-[280px] sm:w-[360px] md:w-[420px]"
         />
-        <p className="md:text-lg text-foreground/80">
-          Tudo para deixar você no estilo que a cena precisa!.
+
+        <p className="mt-4 text-foreground/80 md:text-lg">
+          Tudo para deixar você no estilo que a cena pede.
         </p>
-        <div className="mt-12 flex items-center justify-center gap-4">
-          <Button size="lg" className="rounded-full text-base">
-            Produtos <ArrowUpRight className="h-5! w-5!" />
+
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+          <Button size="lg" className="rounded-full text-base" asChild>
+            <Link href="/produtos">
+              Produtos <ArrowUpRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
+
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full text-base shadow-none">
-            <CirclePlay className="h-5! w-5!" /> Sobre a marca
+            className="rounded-full text-base shadow-none"
+          >
+            <CirclePlay className="mr-2 h-5 w-5" />
+            Sobre a marca
           </Button>
         </div>
       </div>
-    </div>
-  );
+    </section>
+  )
 }

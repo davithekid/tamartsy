@@ -1,147 +1,175 @@
-"use client";;
-import { motion } from "framer-motion";
-import { Plus } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+'use client'
 
-const easeTransition = [0.25, 0.1, 0.25, 1];
+import { motion } from 'framer-motion'
+import { Plus } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Link from 'next/link'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from '@/components/ui/carousel'
+
+const easeTransition = [0.25, 0.1, 0.25, 1]
+
+const IndustryCard = ({ industry, industryLabel }) => (
+  <motion.div
+    className="group relative h-[420px] overflow-hidden rounded-3xl hover:opacity-60 cursor-pointer"
+    whileHover="hover"
+    initial="initial"
+  >
+    <img
+      src={industry.image}
+      alt={industry.imageAlt}
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+
+    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+    <motion.h3
+      variants={{
+        initial: { y: 0, opacity: 1 },
+        hover: { y: -20, opacity: 0 },
+      }}
+      transition={{ duration: 0.3 }}
+      className="absolute bottom-8 left-6 z-10 text-2xl font-bold text-white"
+    >
+      {industry.name}
+    </motion.h3>
+
+    <motion.div
+      variants={{
+        initial: { opacity: 0, y: 30 },
+        hover: { opacity: 1, y: 0 },
+      }}
+      transition={{ duration: 0.4, ease: easeTransition }}
+      className="absolute inset-0 z-20 flex flex-col justify-end p-6 text-white"
+    >
+      <span className="mb-2 text-sm uppercase tracking-wide text-white/70">
+        {industryLabel}
+      </span>
+      <p className="mb-4 text-sm leading-relaxed text-white/90">
+        {industry.description}
+      </p>
+
+      <Button
+        size="sm"
+        className="w-fit rounded-full bg-white/90 text-black hover:bg-white"
+        asChild
+      >
+        <Link href={industry.url}>Explorar</Link>
+      </Button>
+    </motion.div>
+
+    {/* Plus icon */}
+    <motion.div
+      className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur"
+      variants={{
+        initial: { rotate: 0 },
+        hover: { rotate: 90 },
+      }}
+      transition={{ duration: 0.4 }}
+    >
+      <Plus size={16} />
+    </motion.div>
+  </motion.div>
+)
+
+
+const IndustriesResponsive = ({ industries, industryLabel }) => (
+  <>
+    <div className="lg:hidden">
+      <Carousel opts={{ align: 'start', dragFree: true }}>
+        <CarouselContent>
+          {industries.map((industry, index) => (
+            <CarouselItem
+              key={index}
+              className="basis-[85%] sm:basis-[60%]"
+            >
+              <IndustryCard
+                industry={industry}
+                industryLabel={industryLabel}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </div>
+
+    <div className="hidden grid-cols-2 gap-6 lg:grid xl:grid-cols-4">
+      {industries.map((industry, index) => (
+        <IndustryCard
+          key={index}
+          industry={industry}
+          industryLabel={industryLabel}
+        />
+      ))}
+    </div>
+  </>
+)
 
 const Industries1 = ({
-  title = "Produtos",
-  industryLabel = "Prévia",
-
+  title = 'Produtos',
+  industryLabel = 'Prévia',
   industries = [
     {
-      name: "Bolsas",
+      name: 'Bolsas',
       description:
-        "Bolsas de alta qualidade que combinam estilo, funcionalidade e durabilidade para o uso diário.",
-      image: "./bolsa.jpeg",
-      imageAlt: "Ilustração de bolsa",
-      url: "http://shadcnblocks.com/blocks",
+        'Bolsas de alta qualidade que combinam estilo, funcionalidade e durabilidade.',
+      image: './bolsa.jpeg',
+      imageAlt: 'Ilustração de bolsa',
+      url: '/produtos',
     },
     {
-      name: "Tops",
+      name: 'Tops',
       description:
-        "Tops modernos, confeccionados com atenção ao conforto, tendências e tecidos de qualidade para diversas ocasiões.",
-      image: "./bolsa.jpeg",
-      imageAlt: "Ilustração de top",
-      url: "http://shadcnblocks.com/blocks",
+        'Tops modernos com conforto, tendências atuais e tecidos premium.',
+      image: './bolsa.jpeg',
+      imageAlt: 'Ilustração de top',
+      url: '/produtos',
     },
     {
-      name: "Headpiece",
+      name: 'Headpiece',
       description:
-        "Acessórios para cabeça elegantes, projetados para realçar o estilo pessoal com conforto e sofisticação.",
-      image: "./bolsa.jpeg",
-      imageAlt: "Ilustração de acessório de cabeça",
-      url: "http://shadcnblocks.com/blocks",
+        'Acessórios elegantes para realçar o visual com sofisticação.',
+      image: './bolsa.jpeg',
+      imageAlt: 'Ilustração de headpiece',
+      url: '/produtos',
     },
     {
-      name: "Variados",
+      name: 'Variados',
       description:
-        "Saquinhos protetores e práticos para câmeras digitais, garantindo segurança e facilidade no transporte do seu Cyber-shot.",
-      image: "./bolsa.jpeg",
-      imageAlt: "Ilustração de saquinho para câmera",
-      url: "http://shadcnblocks.com/blocks",
+        'Saquinhos e acessórios práticos para proteção e transporte.',
+      image: './bolsa.jpeg',
+      imageAlt: 'Ilustração de acessórios',
+      url: '/produtos',
     },
-  ]
+  ],
 }) => {
   return (
-    <section className="py-16">
-      <div className="container">
-        <h2 className="text-foreground mb-8 text-4xl font-bold">{title}</h2>
+    <section className="py-20">
+      <div className="mx-auto max-w-7xl space-y-12 px-4 sm:px-8">
+        <header className="space-y-3">
+          <h2 className="text-4xl font-bold tracking-tight">{title}</h2>
+          <p className="max-w-xl text-muted-foreground">
+            Explore nossas categorias exclusivas e descubra produtos feitos
+            com atenção aos detalhes.
+          </p>
+        </header>
 
-        <div className="grid grid-cols-1 gap-1 lg:grid-cols-2 xl:grid-cols-4" id="vendidas">
-          {industries.map((industry, index) => (
-            <a href={industry.url} key={index}>
-              <motion.div
-                key={index}
-                className=" group relative overflow-hidden rounded-2xl"
-                whileHover="hover"
-                initial="initial">
-                <motion.div
-                  variants={{
-                    initial: {
-                      opacity: 1,
-                      pointerEvents: "auto",
-                      clipPath: "inset(0% 0% 0% 0%)",
-                    },
-                    hover: {
-                      opacity: 0,
-                      pointerEvents: "none",
-                      clipPath: "inset(0% 0% 100% 0%)",
-                    },
-                  }}
-                  transition={{ duration: 0.4, ease: easeTransition }}
-                  className="min-h-120 lg:min-h-144 xl:min-h-112 relative z-0 flex h-full flex-col items-center justify-center">
-                  <div className="flex h-full justify-center">
-                    <img
-                      src={industry.image}
-                      alt={industry.imageAlt}
-                      className="h-120 w-full object-cover opacity-50" />
-                  </div>
-                  <h3 className="text-foreground absolute bottom-10 text-lg font-extrabold">
-                    {industry.name}
-                  </h3>
-                </motion.div>
+        <IndustriesResponsive
+          industries={industries}
+          industryLabel={industryLabel}
+        />
 
-                {/* Black overlay - slides up from bottom */}
-                <motion.div
-                  className="absolute inset-0 z-10 bg-black"
-                  variants={{
-                    initial: { y: "100%" },
-                    hover: { y: "0%" },
-                  }}
-                  transition={{ duration: 0.4, ease: easeTransition }}
-                  style={{ willChange: "transform" }} />
-
-                {/* Hover state: Description */}
-                <motion.div
-                  variants={{
-                    initial: { opacity: 0, y: 20 },
-                    hover: { opacity: 1, y: 0 },
-                  }}
-                  transition={{ duration: 0.4, ease: easeTransition }}
-                  className="min-h-120 lg:min-h-144 xl:min-h-112 absolute inset-0 z-20 flex items-center justify-center p-8 text-white">
-                  <div className="space-y-3">
-                    <p className="font-medium opacity-90">{industryLabel}:</p>
-                    <p>{industry.description}</p>
-                  </div>
-                </motion.div>
-
-                {/* Plus button */}
-                <motion.div
-                  className="absolute right-4 top-4 z-30"
-                  variants={{
-                    initial: { opacity: 0.7, rotate: 0 },
-                    hover: { opacity: 1, rotate: 90 },
-                  }}
-                  transition={{ duration: 0.4, ease: easeTransition }}>
-                  <div className="relative rounded-full p-2">
-                    <div className="bg-muted-foreground/20 absolute inset-0 rounded-full" />
-                    <motion.div
-                      className="bg-muted-foreground absolute inset-0 rounded-full"
-                      variants={{
-                        initial: { opacity: 0 },
-                        hover: { opacity: 1 },
-                      }}
-                      transition={{ duration: 0.4, ease: easeTransition }} />
-                    <Plus className="relative z-10 size-4" />
-                  </div>
-                </motion.div>
-              </motion.div>
-            </a>
-          ))}
-        </div>
-        <div className="flex justify-center py-3" id="catalogo">
-          <Button>
-            <Link href={"/produtos"}>
-            Visualizar catálogo completo
-            </Link>
+        <div className="flex justify-center pt-8">
+          <Button size="lg" className="rounded-full" asChild>
+            <Link href="/produtos">Visualizar catálogo completo</Link>
           </Button>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export { Industries1 };
+export { Industries1 }
