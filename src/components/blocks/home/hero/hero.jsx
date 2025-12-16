@@ -20,7 +20,7 @@ export default function Hero() {
         )} />
       <div className="relative z-10 text-center max-w-3xl">
         <Badge variant="secondary" className="rounded-full py-1 border-border font-serif">
-            since 2025 <ArrowUpRight className="ml-1 size-4" />
+            desde 2025 <ArrowUpRight className="ml-1 size-4" />
         </Badge>
         <Image
           src={'/logo.svg'}

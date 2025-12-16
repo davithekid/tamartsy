@@ -1,144 +1,123 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { Input } from '@/components/ui/input'
-import { Card, CardContent } from '@/components/ui/card'
-import { Search, ArrowRight, Star, TrendingUp, ShoppingBag, Flame } from 'lucide-react'
+import { ArrowRight, ShoppingBag } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
+import Link from 'next/link'
 
 const storeData = {
-    title: "Bolsas que transformam seu look!",
-    subtitle: "Descubra nossa coleção exclusiva: design único, qualidade premium e estilo que se destaca em qualquer ocasião.",
+    title: 'Bolsas que transformam seu look!',
+    subtitle:
+        'Descubra nossa coleção exclusiva: design único, qualidade premium e estilo que se destaca em qualquer ocasião.',
     featuredProducts: [
         {
             id: 1,
-            name: 'Bolsa Baguete',
+            name: 'Bolsa Eclipse Lunar',
             image: './modelo.png',
             tag: 'Best Seller',
         },
         {
             id: 2,
-            name: 'Bolsa Tote Elegante',
-            image: './bolsa.jpeg',
+            name: 'Bolsa Duo',
+            image: './modelo-bolsa-roxa.png',
             tag: 'Novidade',
         },
         {
             id: 3,
             name: 'Bolsa Transversal Luxo',
-            image: './bolsa.jpeg',
+            image: './bolsa-roxa-aberta.png',
             tag: 'Premium',
-        },
-        {
-            id: 4,
-            name: 'Bolsa Mochila Fashion',
-            image: './bolsa.jpeg',
-            tag: 'Destaque',
         },
     ],
 }
 
 export default function StorefrontHero2() {
-    const [searchQuery, setSearchQuery] = useState('')
     const [api, setApi] = useState()
     const [currentSlide, setCurrentSlide] = useState(0)
 
-    // Auto-scroll functionality
     useEffect(() => {
         if (!api) return
 
         const interval = setInterval(() => {
-            const nextSlide = (currentSlide + 1) % storeData.featuredProducts.length
-            api.scrollTo(nextSlide)
-            setCurrentSlide(nextSlide)
+            const next = (currentSlide + 1) % storeData.featuredProducts.length
+            api.scrollTo(next)
+            setCurrentSlide(next)
         }, 5000)
 
         return () => clearInterval(interval)
     }, [api, currentSlide])
 
     return (
-        <section className='from-background to-accent/20 relative bg-linear-to-b'>
-            <div className='relative container mx-auto px-4 py-16 md:px-8 lg:px-12 lg:py-20'>
-                <div className='grid grid-cols-1 items-center gap-12 lg:grid-cols-2'>
-                    <header className='space-y-8'>
-                        <h1 className='text-4xl font-bold text-balance md:text-5xl lg:text-6xl'>{storeData.title}</h1>
-                        <p className='text-muted-foreground max-w-lg text-xl text-balance'>{storeData.subtitle}</p>
-                        <div className='flex gap-4'>
-                            <Button size='lg' className='cursor-pointer gap-2 rounded-full px-8'>
-                                Compre Agora
-                                <ArrowRight className='size-4' />
-                            </Button>
-                            <Button size='lg' variant='outline' className='cursor-pointer gap-2 rounded-full px-8'>
-                                <ShoppingBag className='size-4' />
-                                Visitar Catálogo
-                            </Button>
+        <section className="relative overflow-hidden bg-background">
+            <div className="pointer-events-none absolute inset-0 bg-radial from-primary/10 via-transparent to-transparent" />
+
+            <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-8">
+                <div className="grid items-center gap-16 lg:grid-cols-2">
+                    <header className="space-y-8">
+                        <Badge className="w-fit rounded-full">Coleção exclusiva</Badge>
+
+                        <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
+                            {storeData.title}
+                        </h1>
+
+                        <p className="max-w-xl text-lg text-muted-foreground">
+                            {storeData.subtitle}
+                        </p>
+
+                        <div className="flex gap-4">
+                                <Link href="#vendidas" scroll={true}>
+                                    <Button size="lg" className="rounded-full px-8">
+                                        Mais vendidas <ArrowRight className="ml-2 size-4" />
+                                    </Button>
+                                </Link>
+
+
+                            <Link href="#catalogo" scroll={true}>
+                                <Button size="lg" variant="outline" className="rounded-full px-8">
+                                    <ShoppingBag className="mr-2 size-4" />
+                                    Catálogo
+                                </Button>
+                            </Link>
+
                         </div>
                     </header>
 
-                    <div className='flex flex-col gap-4'>
-                        <div className='relative h-[500px] w-full border-0'>
-                            <Carousel
-                                className='group size-full'
-                                setApi={setApi}
-                                opts={{
-                                    align: 'start',
-                                    loop: true,
-                                    duration: 20,
-                                    skipSnaps: true,
-                                }}
-                                onSelect={() => {
-                                    if (api) {
-                                        setCurrentSlide(api.selectedScrollSnap())
-                                    }
-                                }}
-                            >
-                                <CarouselContent className='h-full'>
-                                    {storeData.featuredProducts.map(product => (
-                                        <CarouselItem key={product.id} className='h-full'>
-                                            <Card className='relative size-full overflow-hidden py-4'>
-                                                <CardContent className='px-4'>
-                                                    <div className='relative size-full overflow-hidden rounded-md'>
-                                                        <img
-                                                            src={product.image}
-                                                            alt={product.name}
-                                                            className='h-[500px] w-full object-cover'
-                                                            loading='lazy'
-                                                        />
-                                                    </div>
-                                                    <div className='from-background/90 via-background/30 absolute inset-0 bg-linear-to-t to-transparent' />
+                    <div className="relative h-[520px]">
+                        <Carousel setApi={setApi} opts={{ loop: true }}>
+                            <CarouselContent>
+                                {storeData.featuredProducts.map((product) => (
+                                    <CarouselItem key={product.id}>
+                                        <div className="relative h-[520px] overflow-hidden rounded-3xl">
+                                            <img
+                                                src={product.image}
+                                                alt={product.name}
+                                                className="h-full w-full object-cover"
+                                            />
 
-                                                    <div className='text-background-foreground absolute inset-0 flex flex-col justify-end p-8'>
-                                                        <div className='relative z-10 max-w-md space-y-4'>
-                                                            <Badge className='w-fit rounded-full'>{product.tag}</Badge>
-                                                            <h2 className='text-4xl font-bold'>{product.name}</h2>
-                                                            <p className='text-background-foreground/80 text-lg'>
-                                                                Discover the latest in style and comfort with our premium collection.
-                                                            </p>
-                                                            <div className='flex items-center gap-4 pt-2'>
-                                                                <Button size='lg' className='cursor-pointer rounded-full'>
-                                                                    Shop Now
-                                                                </Button>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                            <div className="absolute inset-0 flex flex-col justify-end p-10 text-white">
+                                                <Badge className="w-fit bg-white/90 text-black">
+                                                    {product.tag}
+                                                </Badge>
 
-                                                    {product.trending && (
-                                                        <div className='text-background-foreground bg-foreground/10 dark:bg-background/20 absolute end-8 top-8 flex items-center gap-1 rounded-full px-3 py-1 text-sm font-medium backdrop-blur-xs'>
-                                                            <Flame className='size-4' /> Trending
-                                                        </div>
-                                                    )}
-                                                </CardContent>
-                                            </Card>
-                                        </CarouselItem>
-                                    ))}
-                                </CarouselContent>
-                            </Carousel>
-                        </div>
+                                                <h2 className="mt-3 text-3xl font-semibold">
+                                                    {product.name}
+                                                </h2>
 
-                        {/* Dots Navigation - Enhanced */}
-                        <div className='relative mt-8 flex justify-center gap-3'>
+                                                <Button className="mt-4 w-fit rounded-full">
+                                                    Compre agora
+                                                </Button>
+                                            </div>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                        </Carousel>
+
+                        <div className="mt-6 flex justify-center gap-3">
                             {storeData.featuredProducts.map((_, index) => (
                                 <button
                                     key={index}
@@ -146,12 +125,11 @@ export default function StorefrontHero2() {
                                         api?.scrollTo(index)
                                         setCurrentSlide(index)
                                     }}
-                                    className={`relative size-3 rounded-full transition-all ${currentSlide === index ? 'bg-primary' : 'bg-foreground/20 hover:bg-foreground/40'}`}
-                                    aria-label={`Go to slide ${index + 1}`}
-                                    aria-current={currentSlide === index ? 'step' : undefined}
-                                >
-                                    {currentSlide === index && <span className='absolute inset-0 m-auto rounded-full' />}
-                                </button>
+                                    className={`h-2.5 w-2.5 rounded-full ${currentSlide === index
+                                        ? 'bg-primary scale-125'
+                                        : 'bg-foreground/30'
+                                        }`}
+                                />
                             ))}
                         </div>
                     </div>

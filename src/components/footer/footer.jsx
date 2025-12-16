@@ -4,6 +4,7 @@ import {
   GithubIcon,
   TwitchIcon,
   TwitterIcon,
+  InstagramIcon
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,7 +30,7 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-black ">
       <div className="grow bg-muted" />
       <footer className="border-t">
         <div className="max-w-(--breakpoint-xl) mx-auto">
@@ -43,7 +44,7 @@ const Footer = () => {
             <ul className="mt-6 flex items-center gap-4 flex-wrap">
               {footerLinks.map(({ title, href }) => (
                 <li key={title}>
-                  <Link href={href} className="text-muted-foreground hover:text-foreground">
+                  <Link href={href} className="text-muted dark:text-primary hover:text-muted-foreground">
                     {title}
                   </Link>
                 </li>
@@ -54,7 +55,7 @@ const Footer = () => {
           <div
             className="py-8 flex flex-col-reverse sm:flex-row items-center justify-between gap-x-2 gap-y-5 px-6 xl:px-0">
             {/* Copyright */}
-            <span className="text-muted-foreground">
+            <span className="text-muted dark:text-primary">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
                 tam artsy
@@ -62,18 +63,9 @@ const Footer = () => {
               . Todos os direitos reservados.
             </span>
 
-            <div className="flex items-center gap-5 text-muted-foreground">
+            <div className="flex items-center gap-5 text-muted dark:text-primary">
               <Link href="#" target="_blank">
-                <TwitterIcon className="h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <DribbbleIcon className="h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <TwitchIcon className="h-5 w-5" />
-              </Link>
-              <Link href="#" target="_blank">
-                <GithubIcon className="h-5 w-5" />
+                <InstagramIcon className="h-5 w-5" />
               </Link>
             </div>
           </div>

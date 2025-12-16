@@ -19,7 +19,7 @@ export const NavMenu = (props) => (
           asChild
           className={`${navigationMenuTriggerStyle()} font-bold tracking-widest uppercase hover:text-primary hover:underline underline-offset-8 transition-all px-4`}
         >
-          <Link href="/">Home</Link>
+          <Link href="/">início</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
 
@@ -47,7 +47,7 @@ export const NavMenu = (props) => (
               href="/cybershot"
               className="p-2 rounded-lg hover:bg-neutral-100 hover:dark:bg-neutral-800 transition-colors"
             >
-              Cybershot
+              Variados
             </Link>
             <Link
               href="/produtos"

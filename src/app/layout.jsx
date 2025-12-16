@@ -19,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-br" suppressHydrationWarning>
+    <html lang="pt-br" suppressHydrationWarning className="scroll-smooth">
       <head>
         <link rel="icon" href="/logo.svg" sizes="any" />
       </head>

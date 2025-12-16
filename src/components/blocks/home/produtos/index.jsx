@@ -36,7 +36,7 @@ const Industries1 = ({
       url: "http://shadcnblocks.com/blocks",
     },
     {
-      name: "Saquinho para cyber shot",
+      name: "Variados",
       description:
         "Saquinhos protetores e práticos para câmeras digitais, garantindo segurança e facilidade no transporte do seu Cyber-shot.",
       image: "./bolsa.jpeg",
@@ -50,7 +50,7 @@ const Industries1 = ({
       <div className="container">
         <h2 className="text-foreground mb-8 text-4xl font-bold">{title}</h2>
 
-        <div className="grid grid-cols-1 gap-1 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-1 lg:grid-cols-2 xl:grid-cols-4" id="vendidas">
           {industries.map((industry, index) => (
             <a href={industry.url} key={index}>
               <motion.div
@@ -58,7 +58,6 @@ const Industries1 = ({
                 className=" group relative overflow-hidden rounded-2xl"
                 whileHover="hover"
                 initial="initial">
-                {/* Default state: Image and heading */}
                 <motion.div
                   variants={{
                     initial: {
@@ -133,7 +132,7 @@ const Industries1 = ({
             </a>
           ))}
         </div>
-        <div className="flex justify-center py-3">
+        <div className="flex justify-center py-3" id="catalogo">
           <Button>
             <Link href={"/produtos"}>
             Visualizar catálogo completo
