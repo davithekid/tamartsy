@@ -118,7 +118,7 @@ const Industries1 = ({
         'Bolsas de alta qualidade que combinam estilo, funcionalidade e durabilidade.',
       image: './bolsa.jpeg',
       imageAlt: 'Ilustração de bolsa',
-      url: '/produtos',
+      url: '/bolsas',
     },
     {
       name: 'Tops',

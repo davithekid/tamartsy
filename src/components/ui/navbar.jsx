@@ -6,17 +6,25 @@ import { ModeToggle } from "../theme/theme-button";
 const Navbar = () => {
   return (
     <nav
-      className="my-3 top-6 inset-x-4 h-16 bg-background border max-w-(--breakpoint-xl) mx-auto rounded-full">
-      <div className="h-full flex items-center justify-between mx-auto px-4">
+      className="
+        fixed top-0 inset-x-0 z-50
+        h-16
+        bg-background/80 backdrop-blur-md
+        border-b border-border/40
+      "
+    >
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6">
+        
         <Logo />
 
         {/* Desktop Menu */}
-        <NavMenu className="hidden md:block" />
+        <div className="hidden md:block">
+          <NavMenu />
+        </div>
 
         <div className="flex items-center gap-3">
-
           <ModeToggle />
-          {/* Mobile Menu */}
+
           <div className="md:hidden">
             <NavigationSheet />
           </div>

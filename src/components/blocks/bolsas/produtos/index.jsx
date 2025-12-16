@@ -45,7 +45,10 @@ const ProductCard = ({ product }) => (
         className="mt-3 w-fit rounded-full bg-white/90 text-black hover:bg-white"
         asChild
       >
-        <Link href="">Ver detalhes</Link>
+        <Link href={`/bolsas/${product.id}`}>
+          Ver detalhes
+        </Link>
+
       </Button>
     </div>
   </div>
@@ -70,9 +73,8 @@ const ProductsResponsive = ({ items, cols = 4 }) => {
       </div>
 
       <div
-        className={`hidden gap-6 lg:grid ${
-          cols === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
-        }`}
+        className={`hidden gap-6 lg:grid ${cols === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'
+          }`}
       >
         {items.map((product) => (
           <ProductCard key={product.id} product={product} />
@@ -125,11 +127,10 @@ const ProductCard2 = () => {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  filter === cat
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${filter === cat
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
-                }`}
+                  }`}
               >
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}
               </button>

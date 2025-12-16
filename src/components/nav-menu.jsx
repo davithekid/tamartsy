@@ -6,55 +6,61 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import Link from "next/link";
+} from "@/components/ui/navigation-menu"
+import Link from "next/link"
 
 export const NavMenu = (props) => (
   <NavigationMenu {...props}>
-    <NavigationMenuList className="space-x-4 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start">
-
-      {/* Home */}
+    <NavigationMenuList className="gap-2 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
       <NavigationMenuItem>
         <NavigationMenuLink
           asChild
-          className={`${navigationMenuTriggerStyle()} font-bold tracking-widest uppercase hover:text-primary hover:underline underline-offset-8 transition-all px-4`}
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
         >
-          <Link href="/">início</Link>
+          <Link href="/">Início</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
-
       <NavigationMenuItem>
         <NavigationMenuTrigger
-          className={`${navigationMenuTriggerStyle()}  font-bold tracking-widest uppercase hover:text-primary hover:underline underline-offset-8 transition-all px-4`}
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
         >
           Produtos
         </NavigationMenuTrigger>
-        <NavigationMenuContent>
-          <div className="flex flex-col p-3 space-y-2  rounded-xl">
-            <Link
+
+        <NavigationMenuContent
+          className="
+            mt-2 rounded-2xl border border-border/50 
+            bg-background/95 p-4 shadow-xl backdrop-blur
+            data-[motion=from-start]:animate-in
+            data-[motion=from-start]:fade-in
+            data-[motion=from-start]:zoom-in-95
+          "
+        >
+          <div className="grid w-[320px] gap-2">
+            <MenuItem
               href="/bolsas"
-              className="p-2 rounded-lg  hover:bg-neutral-100 hover:dark:bg-neutral-800 transition-colors"
-            >
-              Bolsas
-            </Link>
-            <Link
+              title="Bolsas"
+              description="Design autoral e acabamento premium"
+            />
+            <MenuItem
               href="/headpiece"
-              className="p-2 rounded-lg hover:bg-neutral-100 hover:dark:bg-neutral-800 transition-colors"
-            >
-              Headpiece
-            </Link>
-            <Link
+              title="Headpiece"
+              description="Acessórios que elevam o visual"
+            />
+            <MenuItem
               href="/cybershot"
-              className="p-2 rounded-lg hover:bg-neutral-100 hover:dark:bg-neutral-800 transition-colors"
-            >
-              Variados
-            </Link>
-            <Link
-              href="/produtos"
-              className="p-2 rounded-lg hover:bg-neutral-100 hover:dark:bg-neutral-800 transition-colors"
-            >
-              Ver todos
-            </Link>
+              title="Variados"
+              description="Peças funcionais e criativas"
+            />
+
+            <div className="mt-2 border-t pt-2">
+              <MenuItem
+                href="/produtos"
+                title="Ver todos"
+                description="Explorar catálogo completo"
+                highlight
+              />
+            </div>
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
@@ -62,16 +68,15 @@ export const NavMenu = (props) => (
       <NavigationMenuItem>
         <NavigationMenuLink
           asChild
-          className={`${navigationMenuTriggerStyle()} font-bold tracking-widest uppercase hover:text-primary hover:underline underline-offset-8 transition-all px-4`}
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
         >
           <Link href="/sobre">Sobre</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
-
       <NavigationMenuItem>
         <NavigationMenuLink
           asChild
-          className={`${navigationMenuTriggerStyle()} font-bold tracking-widest uppercase hover:text-primary hover:underline underline-offset-8 transition-all px-4`}
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
         >
           <Link href="/contato">Contato</Link>
         </NavigationMenuLink>
@@ -79,4 +84,19 @@ export const NavMenu = (props) => (
 
     </NavigationMenuList>
   </NavigationMenu>
-);
+)
+
+const MenuItem = ({ href, title, highlight }) => (
+  <Link
+    href={href}
+    className={`
+      group rounded-xl p-3 transition-all
+      hover:bg-muted/60 hover:shadow-sm
+      ${highlight ? "bg-muted/40" : ""}
+    `}
+  >
+    <div className="flex flex-col">
+      <span className="font-medium">{title}</span>
+    </div>
+  </Link>
+)

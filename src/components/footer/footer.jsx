@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="max-w-(--breakpoint-xl) mx-auto">
           <div className="py-12 flex flex-col justify-start items-center">
             <Image
-              src={'/logo.svg'}
+              src={'/logo-minimalista.png'}
               width={80}
               height={80}
               alt="logo"
