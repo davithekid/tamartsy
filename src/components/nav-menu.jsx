@@ -53,7 +53,7 @@ export const NavMenu = (props) => (
               description="Acessórios que elevam o visual"
             />
             <MenuItem
-              href="/cybershot"
+              href="/variados"
               title="Variados"
               description="Peças funcionais e criativas"
             />

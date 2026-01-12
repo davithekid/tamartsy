@@ -142,7 +142,7 @@ const Industries1 = ({
         'Saquinhos e acessórios práticos para proteção e transporte.',
       image: './cyberhsot.png',
       imageAlt: 'Ilustração de acessórios',
-      url: '/produtos',
+      url: '/variados',
     },
   ],
 }) => {
