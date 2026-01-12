@@ -1,4 +1,4 @@
-import TopsHero from "@/components/blocks/tops/hero/page";
+import TopsHero from "@/components/blocks/tops/hero";
 import TopProdutos from "@/components/blocks/tops/produtos";
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/ui/navbar";
