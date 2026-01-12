@@ -12,10 +12,9 @@ import {
 const allProducts = [
   { id: 1, title: 'Bolsa Eclipse Lunar', image: './bolsa.jpeg', price: 80, category: 'mais vendidos' },
   { id: 2, title: 'Bolsa Duo', image: './bolsa-roxa.jpeg', price: 75, category: 'mais vendidos' },
-  { id: 3, title: 'Eclax Cage Pack', image: './bolsa-roxa.jpeg', price: 399, category: 'mais vendidos' },
-  { id: 4, title: 'Bolsa Baguete', image: './bolsa-roxa.jpeg', price: 299, category: 'baguete' },
-  { id: 5, title: 'Bolsa Duo', image: './bolsa-roxa.jpeg', price: 349, category: 'duo' },
-  { id: 6, title: 'Bolsa de Praia', image: './bolsa.jpeg', price: 499, category: 'todas' },
+  { id: 3, title: 'Eclax Cage Pack', image: './bolsa-praia.jpeg', price: 399, category: 'mais vendidos' },
+  { id: 4, title: 'Bolsa Baguete', image: './bolsa-baguete-batom.jpeg', price: 299, category: 'baguete' },
+  { id: 5, title: 'Bolsa Duo', image: './bolsa-camesin.jpeg', price: 349, category: 'duo' },
 ]
 
 const categories = ['todas', 'baguete', 'duo']

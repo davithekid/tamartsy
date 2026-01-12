@@ -27,7 +27,7 @@ const storeData = {
         {
             id: 3,
             name: 'Bolsa Transversal Luxo',
-            image: './bolsa-roxa-aberta.png',
+            image: './bolsa-baguete-batom.jpeg',
             tag: 'Premium',
         },
     ],
