@@ -53,7 +53,9 @@ export default function Hero() {
             className="rounded-full text-base shadow-none"
           >
             <CirclePlay className="mr-2 h-5 w-5" />
-            Sobre a marca
+            <Link href={'/sobre'}>
+            Sobre Tam
+            </Link>
           </Button>
         </div>
       </div>
