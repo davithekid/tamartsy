@@ -134,7 +134,7 @@ const Industries1 = ({
         'Acessórios elegantes para realçar o visual com sofisticação.',
       image: './headpiece.png',
       imageAlt: 'Ilustração de headpiece',
-      url: '/produtos',
+      url: '/headpiece',
     },
     {
       name: 'Variados',
