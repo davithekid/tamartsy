@@ -126,7 +126,7 @@ const Industries1 = ({
         'Tops modernos com conforto, tendências atuais e tecidos premium.',
       image: './top.jpeg',
       imageAlt: 'Ilustração de top',
-      url: '/produtos',
+      url: '/tops',
     },
     {
       name: 'Headpiece',

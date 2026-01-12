@@ -41,6 +41,11 @@ export const NavMenu = (props) => (
               href="/bolsas"
               title="Bolsas"
               description="Design autoral e acabamento premium"
+            /> 
+            <MenuItem
+              href="/tops"
+              title="Tops"
+              description="Design autoral e acabamento premium"
             />
             <MenuItem
               href="/headpiece"
