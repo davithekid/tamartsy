@@ -12,7 +12,6 @@ import {
 const allProducts = [
   { id: 1, title: 'Headpiece EG com gominhos', image: './headpiece.png', price: 80, category: 'mais vendidos' },
   { id: 2, title: 'Headpiece LB com acessórios', image: './headpiece-branco.png', price: 75, category: 'mais vendidos' },
-
 ]
 
 const categories = ['todas', 'gominho', 'acessórios']
@@ -42,7 +41,7 @@ const ProductCard = ({ product }) => (
         className="mt-3 w-fit rounded-full bg-white/90 text-black hover:bg-white"
         asChild
       >
-        <Link href={`/bolsas/${product.id}`}>
+        <Link href={`/headpiece/${product.id}`}>
           Ver detalhes
         </Link>
 
