@@ -5,11 +5,10 @@ import Navbar from "@/components/ui/navbar";
 export default function Produtos() {
     return (
         <>
-            <nav>
-                <header>
-                    <Navbar />
-                </header>
-            </nav>
+            <header>
+                <Navbar />
+            </header>
+
             <main className="py-12">
                 <Products />
             </main>

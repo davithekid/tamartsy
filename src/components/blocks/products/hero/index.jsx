@@ -12,11 +12,16 @@ import {
 const allProducts = [
   { id: 1, title: 'Bolsa Eclipse Lunar', image: './bolsa.jpeg', price: 80, category: 'mais vendidos' },
   { id: 2, title: 'Top Paparazzi', image: './top.jpeg', price: 75, category: 'mais vendidos' },
-  { id: 3, title: 'Bolsa Baguete', image: './bolsa-baguete-batom.jpeg', price: 399, category: 'mais vendidos' },
-  { id: 5, title: 'Bolsa Duo', image: './bolsa-camesin.jpeg', price: 349, category: 'bolsas' },
-  { id: 6, title: 'Headpiece Tam', image: './headpiece.png', price: 349, category: 'headpieces' },
-  { id: 7, title: 'Regata', image: './top.png', price: 349, category: 'tops' },
-  { id: 8, title: 'Cybershot', image: './cyberhsot.png', price: 349, category: 'variados' },
+  { id: 3, title: 'Bolsa Baguete', image: './bolsa-baguete-batom.jpeg', price: 399, category: 'bolsas' },
+  { id: 5, title: 'Bolsa Camesin', image: './bolsa-camesin.jpeg', price: 349, category: 'bolsas' },
+  { id: 6, title: 'Bolsa Duo', image: './bolsa-roxa.jpeg', price: 349, category: 'bolsas' },
+  { id: 7, title: 'Bolsa Praria', image: './bolsa-praia.jpeg', price: 349, category: 'bolsas' },
+  { id: 8, title: 'Headpiece EG', image: './headpiece.png', price: 349, category: 'mais vendidos' },
+  { id: 9, title: 'Headpiece LG', image: './headpiece-branco.png', price: 349, category: 'headpieces' },
+  { id: 10, title: 'Regata', image: './top.png', price: 349, category: 'tops' },
+  { id: 11, title: 'Regata', image: './regata-verde.jpeg', price: 349, category: 'tops' },
+  { id: 12, title: 'Regata', image: './regata.jpeg', price: 349, category: 'tops' },
+  { id: 13, title: 'Cybershot', image: './cyberhsot.png', price: 349, category: 'variados' },
 ]
 
 const categories = ['todos', 'bolsas', 'tops', 'headpieces', 'variados']
@@ -97,13 +102,13 @@ const Products = () => {
       <div id="vendidas" className="space-y-8">
         <header className="space-y-2">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Mais Escolhidos!
+            Queridinhos da loja
           </h2>
           <p className="max-w-[70ch] text-muted-foreground">
-            Feitas à mão com cuidado e dedicação, cada peça combina charme,
-            estilo e personalidade.
+            As peças mais amadas, escolhidas por quem já conhece.
           </p>
         </header>
+
 
         <ProductsResponsive
           items={allProducts.filter((p) => p.category === 'mais vendidos')}
@@ -115,11 +120,11 @@ const Products = () => {
         <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Todas os Produtos
+              Explore Tudo
             </h2>
             <p className="max-w-[70ch] text-muted-foreground">
-              Descubra outros modelos feitos à mão, cada um com cuidado
-              e estilo únicos.
+              Navegue por todos os produtos e encontre sua vibe.
+
             </p>
           </div>
 
@@ -129,8 +134,8 @@ const Products = () => {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${filter === cat
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
                   }`}
               >
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}
