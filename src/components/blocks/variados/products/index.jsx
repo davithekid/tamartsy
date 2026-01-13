@@ -11,7 +11,6 @@ import {
 
 const allProducts = [
   { id: 1, title: 'Cybershot', image: './cyberhsot.png', price: 80, category: 'mais vendidos' },
-
 ]
 
 const categories = ['todos']
@@ -41,7 +40,7 @@ const ProductCard = ({ product }) => (
         className="mt-3 w-fit rounded-full bg-white/90 text-black hover:bg-white"
         asChild
       >
-        <Link href={`/bolsas/${product.id}`}>
+        <Link href={`/variados/${product.id}`}>
           Ver detalhes
         </Link>
 
