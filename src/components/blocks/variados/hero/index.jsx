@@ -8,9 +8,8 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import Link from 'next/link'
 
 const storeData = {
-    title: 'Achadinhos para complementar sua vida!',
-    subtitle:
-        'Descubra nossa coleção exclusiva: design único, qualidade premium e estilo que se destaca em qualquer ocasião.',
+    title: 'Os detalhes importam',
+    subtitle: 'Achadinhos funcionais com estilo.',
     featuredProducts: [
         {
             id: 1,
@@ -18,7 +17,7 @@ const storeData = {
             image: './cyberhsot.png',
             tag: 'Best Seller',
         },
-    
+
     ],
 }
 

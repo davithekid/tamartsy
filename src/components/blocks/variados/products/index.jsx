@@ -11,10 +11,10 @@ import {
 
 const allProducts = [
   { id: 1, title: 'Cybershot', image: './cyberhsot.png', price: 80, category: 'mais vendidos' },
-  
+
 ]
 
-const categories = ['todas']
+const categories = ['todos']
 
 const ProductCard = ({ product }) => (
   <div className="group relative overflow-hidden rounded-2xl bg-muted/30 transition-all duration-300 hover:bg-muted/50">
@@ -81,10 +81,10 @@ const ProductsResponsive = ({ items, cols = 4 }) => {
 }
 
 const VariadosProdutos = () => {
-  const [filter, setFilter] = useState('todas')
+  const [filter, setFilter] = useState('todos')
 
   const filteredProducts = allProducts.filter(
-    (p) => filter === 'todas' || p.category === filter
+    (p) => filter === 'todos' || p.category === filter
   )
 
   return (
@@ -92,13 +92,13 @@ const VariadosProdutos = () => {
       <div id="vendidas" className="space-y-8">
         <header className="space-y-2">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Sucesso de vendas
+            Achadinhos favoritos
           </h2>
           <p className="max-w-[70ch] text-muted-foreground">
-            Feitas à mão com cuidado e dedicação, cada peça combina charme,
-            estilo e personalidade.
+            Itens criativos e feitos à mão pra facilitar o dia a dia.
           </p>
         </header>
+
 
         <ProductsResponsive
           items={allProducts.filter((p) => p.category === 'mais vendidos')}
@@ -110,10 +110,10 @@ const VariadosProdutos = () => {
         <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Todos os itens
+              Expore Todos os Itens
             </h2>
             <p className="max-w-[70ch] text-muted-foreground">
-              Descubra outros modelos feitos à mão, cada um com cuidado
+              Modelos feitos à mão, cada um com cuidado
               e estilo únicos.
             </p>
           </div>
@@ -124,8 +124,8 @@ const VariadosProdutos = () => {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${filter === cat
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
                   }`}
               >
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}

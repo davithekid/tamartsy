@@ -6,22 +6,20 @@ import Navbar from "@/components/ui/navbar";
 export default function Headpiece() {
     return (
         <>
-            <nav>
-                <header>
-                    <Navbar />
-                </header>
+            <header>
+                <Navbar />
+            </header>
 
-                <main>
-                    <HeadpieceHero />
-                </main>
+            <main>
+                <HeadpieceHero />
+            </main>
 
-                <section>
-                    <HeadpieceProducts/>
-                </section>
-                <footer>
-                    <Footer />
-                </footer>
-            </nav>
+            <section>
+                <HeadpieceProducts />
+            </section>
+            <footer>
+                <Footer />
+            </footer>
         </>
     )
 }

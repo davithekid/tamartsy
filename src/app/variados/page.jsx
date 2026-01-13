@@ -6,11 +6,10 @@ import Navbar from "@/components/ui/navbar";
 export default function Variados() {
     return (
         <>
-            <nav>
-                <header>
-                    <Navbar />
-                </header>
-            </nav>
+            <header>
+                <Navbar />
+            </header>
+
             <main>
                 <VariadosHero />
             </main>
@@ -18,7 +17,7 @@ export default function Variados() {
             <section>
                 <VariadosProdutos />
             </section>
-            
+
             <footer>
                 <Footer />
             </footer>
