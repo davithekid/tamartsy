@@ -12,6 +12,7 @@ export default function Home() {
       <header>
         <Navbar />
       </header>
+      
       <main className="mx-auto container">
         <Hero />
       </main>

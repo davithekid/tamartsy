@@ -20,7 +20,7 @@ export const NavMenu = (props) => (
           <Link href="/">Início</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
-      <NavigationMenuItem>
+      <NavigationMenuItem className={'hidden md:block'}>
         <NavigationMenuTrigger
           className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
         >
@@ -41,7 +41,7 @@ export const NavMenu = (props) => (
               href="/bolsas"
               title="Bolsas"
               description="Design autoral e acabamento premium"
-            /> 
+            />
             <MenuItem
               href="/tops"
               title="Tops"
@@ -70,6 +70,50 @@ export const NavMenu = (props) => (
         </NavigationMenuContent>
       </NavigationMenuItem>
 
+      <NavigationMenuItem className={'md:hidden'}>
+        <NavigationMenuLink
+          asChild
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
+        >
+          <Link href="/bolsas">Bolsas</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+      <NavigationMenuItem className={'md:hidden'}>
+        <NavigationMenuLink
+          asChild
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
+        >
+          <Link href="/tops">Tops</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+
+      <NavigationMenuItem className={'md:hidden'}>
+        <NavigationMenuLink
+          asChild
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
+        >
+          <Link href="/headpiece">Headpieces</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+
+      <NavigationMenuItem className={'md:hidden'}>
+        <NavigationMenuLink
+          asChild
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
+        >
+          <Link href="/variados">Variados</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+
+      <NavigationMenuItem className={'md:hidden'}>
+        <NavigationMenuLink
+          asChild
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
+        >
+          <Link href="/produtos">Todos os Produtos</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+
       <NavigationMenuItem>
         <NavigationMenuLink
           asChild
@@ -78,6 +122,7 @@ export const NavMenu = (props) => (
           <Link href="/sobre">Sobre</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
+
       <NavigationMenuItem>
         <NavigationMenuLink
           asChild

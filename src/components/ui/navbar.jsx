@@ -24,7 +24,6 @@ const Navbar = () => {
 
         <div className="flex items-center gap-3">
           <ModeToggle />
-
           <div className="md:hidden">
             <NavigationSheet />
           </div>
