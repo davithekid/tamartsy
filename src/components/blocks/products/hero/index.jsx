@@ -51,7 +51,7 @@ const ProductCard = ({ product }) => (
         className="mt-3 w-fit rounded-full bg-white/90 text-black hover:bg-white"
         asChild
       >
-        <Link href={`/bolsas/${product.id}`}>
+        <Link href={`/produtos/${product.id}`}>
           Ver detalhes
         </Link>
 
