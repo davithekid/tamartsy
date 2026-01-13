@@ -24,7 +24,7 @@ const footerLinks = [
   },
   {
     title: "Headpieces",
-    href: "/headpieces",
+    href: "/headpiece",
   },
   {
     title: "Variados",

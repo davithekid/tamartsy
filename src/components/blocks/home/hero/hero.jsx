@@ -36,7 +36,7 @@ export default function Hero() {
           className="mx-auto w-[280px] sm:w-[360px] md:w-[420px]"
         />
 
-        <p className="mt-4 text-foreground/80 md:text-lg">
+        <p className="mt-4 text-foreground/80 md:text-lg font-serif">
           garotas estilosas usam tam artsy.
         </p>
 
