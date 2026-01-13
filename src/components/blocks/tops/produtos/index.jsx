@@ -13,7 +13,6 @@ const allProducts = [
   { id: 1, title: 'Top Paparazzi', image: './top.png', price: 80, category: 'mais vendidos' },
   { id: 2, title: 'Regata Joy', image: './regata.jpeg', price: 75, category: 'mais vendidos' },
   { id: 3, title: 'Top Paparazzi Ciano', image: './regata-verde.jpeg', price: 75, category: 'mais vendidos' },
-
 ]
 
 const categories = ['todos', 'tops', 'regatas']
@@ -43,10 +42,9 @@ const ProductCard = ({ product }) => (
         className="mt-3 w-fit rounded-full bg-white/90 text-black hover:bg-white"
         asChild
       >
-        <Link href={`/bolsas/${product.id}`}>
+        <Link href={`/tops/${product.id}`}>
           Ver detalhes
         </Link>
-
       </Button>
     </div>
   </div>
