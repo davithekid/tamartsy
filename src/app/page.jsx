@@ -12,16 +12,17 @@ export default function Home() {
       <header>
         <Navbar />
       </header>
-      
+
+
       <main className="mx-auto container">
         <Hero />
       </main>
 
-      <section className="mx-auto container bg-url">
-        <article>
+      <section className="mx-auto ">
+        <article className="bg-card-foreground">
           <Industries1 />
         </article>
-        <article>
+        <article className="mx-auto container">
           <Process1 />
         </article>
 

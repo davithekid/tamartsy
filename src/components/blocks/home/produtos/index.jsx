@@ -150,8 +150,8 @@ const Industries1 = ({
     <section className="py-20">
       <div className="mx-auto max-w-7xl space-y-12 px-4 sm:px-8">
         <header className="space-y-3">
-          <h2 className="text-4xl font-bold tracking-tight">{title}</h2>
-          <p className="max-w-xl text-muted-foreground">
+          <h2 className="text-4xl font-bold tracking-tight text-background">{title}</h2>
+          <p className="max-w-xl text-muted">
             Explore nossas categorias exclusivas e descubra produtos feitos
             com atenção aos detalhes.
           </p>
