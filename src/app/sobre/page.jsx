@@ -6,11 +6,9 @@ import Navbar from "@/components/ui/navbar";
 export default function Sobre() {
     return (
         <>
-            <nav>
-                <header>
-                    <Navbar />
-                </header>
-            </nav>
+            <header>
+                <Navbar />
+            </header>
 
             <section>
                 <CEOAndObjectives />

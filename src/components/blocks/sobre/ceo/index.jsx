@@ -1,5 +1,5 @@
 "use client";
-import { Sparkles, HeartHandshake, Leaf, Rocket, TwitterIcon, DribbbleIcon, TwitchIcon } from "lucide-react";
+import { Sparkles, HeartHandshake, Leaf, Rocket, InstagramIcon, DribbbleIcon, Twitch, InstagramIconIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -7,7 +7,7 @@ const teamMembers = [
   {
     name: "Tamires",
     title: "Fundadora & CEO",
-    bio: "Minha missão é transformar a tradição do crochê em peças modernas e cheias de personalidade. Cada bolsa ou acessório é feito com fios de alta qualidade e dedicação total para garantir que você tenha um item único.",
+    bio: "Minha missão é transformar o crochê em peças modernas e cheias de personalidade.",
     imageUrl: "/fundadora.jpeg",
   },
 ];
@@ -26,21 +26,21 @@ const Services4Content = () => {
       title: "Conexão e Comunidade",
       description:
         "Construir uma comunidade engajada, promovendo a valorização do 'feito à mão' entre os jovens.",
-      items: ["Conteúdo de DIY/Crochê", "Interação nas Redes", "Experiência Personalizada"],
+      items: ["Interação nas Redes", "Experiência Personalizada"],
     },
     {
       icon: <Leaf className="h-6 w-6" />,
       title: "Valorização do Artesanal",
       description:
         "Destacar o processo artesanal, a sustentabilidade e a qualidade única do crochê, incentivando o consumo consciente.",
-      items: ["Transparência no Processo", "Materiais de Qualidade", "Peças Duráveis"],
+      items: ["Materiais de Qualidade", "Peças Duráveis"],
     },
     {
       icon: <Rocket className="h-6 w-6" />,
       title: "Crescimento de Marca",
       description:
-        "Expandir o alcance da marca no mercado jovem, garantindo uma presença digital forte e eficiente.",
-      items: ["Parcerias com Influencers", "Otimização para Mobile", "Novos Nichos de Produtos"],
+        "Expandir o alcance da marca no mercado, garantindo uma presença digital forte e eficiente.",
+      items: [],
     },
   ];
 
@@ -101,26 +101,7 @@ const TeamContent = () => {
             {member.bio}
           </p>
         </div>
-
-        <div className="mt-6 flex items-center justify-center lg:justify-start gap-2.5">
-          <Button size="icon" variant="outline" asChild>
-            <Link href="#" target="_blank">
-              <TwitterIcon className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </Link>
-          </Button>
-          <Button size="icon" variant="outline" asChild>
-            <Link href="#" target="_blank">
-              <DribbbleIcon className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </Link>
-          </Button>
-          <Button size="icon" variant="outline" asChild>
-            <Link href="#" target="_blank">
-              <TwitchIcon className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </Link>
-          </Button>
-        </div>
       </div>
-
     </div>
   );
 };
@@ -132,10 +113,10 @@ const CEOAndObjectives = () => {
           Sobre a Tam Artsy!
         </p>
         <h2 className="mt-3 text-4xl sm:text-5xl font-extrabold tracking-tight">
-          Conheça Nossa Missão
+          Conheça Sobre
         </h2>
         <p className="mt-6 text-lg text-muted-foreground">
-          Nascido de um simples hobby, hoje eu amo fazer outras pessoas felizes e estilosas a partir do crochê.
+          Nascido de um simples hobby, hoje eu amo fazer outras pessoas felizes e estilosas.
         </p>
       </div>
 
