@@ -10,12 +10,12 @@ import {
 } from '@/components/ui/carousel'
 
 const allProducts = [
-  { id: 1, title: 'Headpiece', image: './headpiece.png', price: 80, category: 'mais vendidos' },
-  { id: 2, title: 'Headpiece', image: './headpiece-modelo.jpeg', price: 75, category: 'mais vendidos' },
-  
+  { id: 1, title: 'Headpiece EG com gominhos', image: './headpiece.png', price: 80, category: 'mais vendidos' },
+  { id: 2, title: 'Headpiece LB com acessórios', image: './headpiece-branco.png', price: 75, category: 'mais vendidos' },
+
 ]
 
-const categories = ['todas', 'baguete', 'duo']
+const categories = ['todas', 'gominho', 'acessórios']
 
 const ProductCard = ({ product }) => (
   <div className="group relative overflow-hidden rounded-2xl bg-muted/30 transition-all duration-300 hover:bg-muted/50">
@@ -93,13 +93,13 @@ const HeadpieceProducts = () => {
       <div id="vendidas" className="space-y-8">
         <header className="space-y-2">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Sucesso de vendas
+            Pra chamar atenção
           </h2>
           <p className="max-w-[70ch] text-muted-foreground">
-            Feitas à mão com cuidado e dedicação, cada peça combina charme,
-            estilo e personalidade.
+            O acessório que vira o destaque do look.
           </p>
         </header>
+
 
         <ProductsResponsive
           items={allProducts.filter((p) => p.category === 'mais vendidos')}
@@ -111,10 +111,10 @@ const HeadpieceProducts = () => {
         <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Todas Headpieces
+              Expore Todas Headpieces
             </h2>
             <p className="max-w-[70ch] text-muted-foreground">
-              Descubra outros modelos feitos à mão, cada um com cuidado
+              Modelos feitos à mão, cada um com cuidado
               e estilo únicos.
             </p>
           </div>
@@ -125,8 +125,8 @@ const HeadpieceProducts = () => {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${filter === cat
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
                   }`}
               >
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}

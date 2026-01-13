@@ -37,7 +37,7 @@ export default function Hero() {
         />
 
         <p className="mt-4 text-foreground/80 md:text-lg">
-          Tudo para deixar você no estilo.
+          garotas estilosas usam tam artsy.
         </p>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">

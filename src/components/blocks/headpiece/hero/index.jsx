@@ -8,9 +8,9 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import Link from 'next/link'
 
 const storeData = {
-    title: 'Tops que transformam seu look!',
+    title: 'O detalhe que rouba a cena',
     subtitle:
-        'Descubra nossa coleção exclusiva: design único, qualidade premium e estilo que se destaca em qualquer ocasião.',
+        'Para sair da zona de conforto com uma peça exclusiva e premium.',
     featuredProducts: [
         {
             id: 1,
@@ -20,8 +20,14 @@ const storeData = {
         },
         {
             id: 2,
-            name: 'Headpiece',
+            name: 'Headpiece EG',
             image: './headpiece.png',
+            tag: 'Novidade',
+        },
+        {
+            id: 3,
+            name: 'Headpiece LG',
+            image: './headpiece-branco.png',
             tag: 'Novidade',
         },
 
