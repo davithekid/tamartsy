@@ -8,9 +8,8 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import Link from 'next/link'
 
 const storeData = {
-    title: 'Bolsas que transformam seu look!',
-    subtitle:
-        'Descubra nossa coleção exclusiva: design único, qualidade premium e estilo que se destaca em qualquer ocasião.',
+    title: 'Bolsas que transformam seu look',
+    subtitle: 'Design em crochê, feito à mão, pra quem ama se destacar.',
     featuredProducts: [
         {
             id: 1,
@@ -67,11 +66,11 @@ export default function StorefrontHero2() {
                         </p>
 
                         <div className="flex gap-4">
-                                <Link href="#vendidas" scroll={true}>
-                                    <Button size="lg" className="rounded-full px-8">
-                                        Mais vendidas <ArrowRight className="ml-2 size-4" />
-                                    </Button>
-                                </Link>
+                            <Link href="#vendidas" scroll={true}>
+                                <Button size="lg" className="rounded-full px-8">
+                                    Mais vendidas <ArrowRight className="ml-2 size-4" />
+                                </Button>
+                            </Link>
 
 
                             <Link href="#catalogo" scroll={true}>

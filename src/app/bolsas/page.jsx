@@ -13,12 +13,13 @@ export default function Bolsas() {
             <main>
                 <StorefrontHero2 />
             </main>
+            
             <section>
                 <ProductCard2 />
             </section>
 
             <footer>
-                <Footer/>
+                <Footer />
             </footer>
         </>
     )

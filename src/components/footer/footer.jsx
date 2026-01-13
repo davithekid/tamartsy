@@ -76,7 +76,7 @@ const Footer = () => {
             </span>
 
             <div className="flex items-center gap-5 text-muted dark:text-primary">
-              <Link href="#" target="_blank">
+              <Link href="https://www.instagram.com/tam.artsy/" target="_blank">
                 <InstagramIcon className="h-5 w-5" />
               </Link>
             </div>
