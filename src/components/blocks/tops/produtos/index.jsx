@@ -12,10 +12,11 @@ import {
 const allProducts = [
   { id: 1, title: 'Top Paparazzi', image: './top.png', price: 80, category: 'mais vendidos' },
   { id: 2, title: 'Regata Joy', image: './regata.jpeg', price: 75, category: 'mais vendidos' },
-  
+  { id: 3, title: 'Top Paparazzi Ciano', image: './regata-verde.jpeg', price: 75, category: 'mais vendidos' },
+
 ]
 
-const categories = ['todas', 'baguete', 'duo']
+const categories = ['todos', 'tops', 'regatas']
 
 const ProductCard = ({ product }) => (
   <div className="group relative overflow-hidden rounded-2xl bg-muted/30 transition-all duration-300 hover:bg-muted/50">
@@ -93,13 +94,13 @@ const TopProdutos = () => {
       <div id="vendidas" className="space-y-8">
         <header className="space-y-2">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Sucesso de vendas
+            Os mais desejados
           </h2>
           <p className="max-w-[70ch] text-muted-foreground">
-            Feitas à mão com cuidado e dedicação, cada peça combina charme,
-            estilo e personalidade.
+            Feitos à mão pra looks cheios de atitude.
           </p>
         </header>
+
 
         <ProductsResponsive
           items={allProducts.filter((p) => p.category === 'mais vendidos')}
@@ -111,7 +112,7 @@ const TopProdutos = () => {
         <header className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-2">
             <h2 className="text-3xl font-bold sm:text-4xl">
-              Todas as bolsas
+              Explore Todos os Tops
             </h2>
             <p className="max-w-[70ch] text-muted-foreground">
               Descubra outros modelos feitos à mão, cada um com cuidado
@@ -125,8 +126,8 @@ const TopProdutos = () => {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${filter === cat
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
                   }`}
               >
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}

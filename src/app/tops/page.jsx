@@ -7,22 +7,21 @@ export default function Tops() {
     return (
         <>
 
-        <header>
-            <nav>
-                <Navbar/>
-            </nav>
+            <header>
+                <Navbar />
+            </header>
 
-        <main>
-            <TopsHero/>
-        </main>
+            <main>
+                <TopsHero />
+            </main>
 
-        <section>
-            <TopProdutos/>
-        </section>
+            <section>
+                <TopProdutos />
+            </section>
+            
             <footer>
-                <Footer/>
+                <Footer />
             </footer>
-        </header>
         </>
     )
 }

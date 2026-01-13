@@ -8,9 +8,8 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import Link from 'next/link'
 
 const storeData = {
-    title: 'Tops que transformam seu look!',
-    subtitle:
-        'Descubra nossa coleção exclusiva: design único, qualidade premium e estilo que se destaca em qualquer ocasião.',
+    title: 'Nada básico.',
+    subtitle: 'Tops em crochê feitos à mão pra quem gosta de se destacar.',
     featuredProducts: [
         {
             id: 1,
@@ -23,13 +22,13 @@ const storeData = {
             name: 'Top Paparazzi',
             image: './top.png',
             tag: 'Novidade',
-        },{
+        }, {
             id: 3,
             name: 'Regata Joy',
             image: './regata.jpeg',
             tag: 'Novidade',
         },
-      
+
     ],
 }
 
@@ -67,11 +66,11 @@ export default function TopsHero() {
                         </p>
 
                         <div className="flex gap-4">
-                                <Link href="#vendidas" scroll={true}>
-                                    <Button size="lg" className="rounded-full px-8">
-                                        Mais vendidas <ArrowRight className="ml-2 size-4" />
-                                    </Button>
-                                </Link>
+                            <Link href="#vendidas" scroll={true}>
+                                <Button size="lg" className="rounded-full px-8">
+                                    Mais vendidas <ArrowRight className="ml-2 size-4" />
+                                </Button>
+                            </Link>
 
 
                             <Link href="#catalogo" scroll={true}>
