@@ -3,10 +3,9 @@ export const bolsas = [
     id: 1,
     title: 'Bolsa Eclipse Lunar',
     price: 80,
-    description: 'Bolsa artesanal com acabamento premium.',
+    description: 'Bolsa em crochê artesanal, feita à mão com acabamento cuidadoso.',
     images: [
       '/bolsa.jpeg',
-      '/bolsa-roxa.jpeg',
     ],
     category: 'mais vendidos',
   },
@@ -14,10 +13,40 @@ export const bolsas = [
     id: 2,
     title: 'Bolsa Duo',
     price: 75,
-    description: 'Design moderno para o dia a dia.',
+    description: 'Modelo versátil em crochê, ideal para o dia a dia.',
     images: [
       '/bolsa-roxa.jpeg',
     ],
     category: 'mais vendidos',
   },
-]
+  {
+    id: 3,
+    title: 'Eclax de Praia',
+    price: 99,
+    description: 'Bolsa leve e estilosa, perfeita para dias de sol e praia.',
+    images: [
+      '/bolsa-praia.jpeg',
+    ],
+    category: 'mais vendidos',
+  },
+  {
+    id: 4,
+    title: 'Bolsa Baguete',
+    price: 99,
+    description: 'Bolsa baguete em crochê com design moderno e elegante.',
+    images: [
+      '/bolsa-baguete-batom.jpeg',
+    ],
+    category: 'baguete',
+  },
+  {
+    id: 5,
+    title: 'Bolsa Duo',
+    price: 49,
+    description: 'Versão compacta da Bolsa Duo, prática e cheia de estilo.',
+    images: [
+      '/bolsa-camesin.jpeg',
+    ],
+    category: 'duo',
+  },
+];
