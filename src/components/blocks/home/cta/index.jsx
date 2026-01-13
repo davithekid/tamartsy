@@ -2,11 +2,11 @@ import { Button } from "@/components/ui/button";
 
 const Cta10 = ({
   heading = "Gostou de alguma peça?",
-  description = "Me envie uma mensagem no privado e vamos garantir que sua comprinha chegue direitinho até você!",
+  description = "Entre em contato na loja do instagagram e garanta a sua!",
   buttons = {
     primary: {
       text: "Falar comigo",
-      url: "https://www.shadcnblocks.com", 
+      url: "https://www.instagram.com/tam.artsy/", 
     },
   },
 }) => {

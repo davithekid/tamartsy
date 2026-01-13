@@ -123,7 +123,7 @@ const Industries1 = ({
     {
       name: 'Tops',
       description:
-        'Tops modernos com conforto, tendências atuais e tecidos premium.',
+        'Tops com conforto, tendências e estilo premium.',
       image: './top.jpeg',
       imageAlt: 'Ilustração de top',
       url: '/tops',
@@ -131,7 +131,7 @@ const Industries1 = ({
     {
       name: 'Headpiece',
       description:
-        'Acessórios elegantes para realçar o visual com sofisticação.',
+        'Acessórios para realçar o visual.',
       image: './headpiece.png',
       imageAlt: 'Ilustração de headpiece',
       url: '/headpiece',
@@ -139,7 +139,7 @@ const Industries1 = ({
     {
       name: 'Variados',
       description:
-        'Saquinhos e acessórios práticos para proteção e transporte.',
+        'Saquinhos e acessórios práticos.',
       image: './cyberhsot.png',
       imageAlt: 'Ilustração de acessórios',
       url: '/variados',

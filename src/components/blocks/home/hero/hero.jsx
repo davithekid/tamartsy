@@ -37,7 +37,7 @@ export default function Hero() {
         />
 
         <p className="mt-4 text-foreground/80 md:text-lg">
-          Tudo para deixar você no estilo que a cena pede.
+          Tudo para deixar você no estilo.
         </p>
 
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
@@ -54,7 +54,7 @@ export default function Hero() {
           >
             <CirclePlay className="mr-2 h-5 w-5" />
             <Link href={'/sobre'}>
-            Sobre Tam
+            Sobre 
             </Link>
           </Button>
         </div>

@@ -4,26 +4,26 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 
 const Process1 = () => {
-const process = [
-  {
-    step: "01",
-    title: "Navegue pelos produtos",
-    description:
-      "Explore nossa coleção de peças de crochê feitas à mão. Veja fotos, detalhes e se encante com cada item cuidadosamente produzido.",
-  },
-  {
-    step: "02",
-    title: "Interessou? Entre em contato!",
-    description:
-      "Se algum produto chamou sua atenção, envie uma mensagem pelo nosso canal de contato. Tire dúvidas, peça mais informações e finalize sua compra de forma rápida e prática.",
-  },
-  {
-    step: "03",
-    title: "Receba em casa",
-    description:
-      "Após a compra, nós preparamos sua peça com todo cuidado e entregamos diretamente na sua casa. Qualidade e carinho em cada detalhe!",
-  },
-];
+  const process = [
+    {
+      step: "01",
+      title: "Navegue pelos produtos",
+      description:
+        "Explore nossa coleção de peças de crochê feitas à mão. Veja fotos, detalhes e se encante com cada item cuidadosamente produzido.",
+    },
+    {
+      step: "02",
+      title: "Interessou? Entre em contato!",
+      description:
+        "Se algum produto chamou sua atenção, envie uma mensagem pelo nosso canal de contato. Tire dúvidas, peça mais informações e finalize sua compra de forma rápida e prática.",
+    },
+    {
+      step: "03",
+      title: "Receba em casa",
+      description:
+        "Após a compra, nós preparamos sua peça com todo cuidado e entregamos diretamente na sua casa. Qualidade e carinho em cada detalhe!",
+    },
+  ];
 
 
   return (
@@ -38,16 +38,6 @@ const process = [
               <Asterisk
                 className="absolute -right-2 -top-2 size-5 text-orange-500 md:size-10 lg:-right-14" />
             </div>
-            <p className="text-foreground/50 text-base">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
-              amet dolorem eum est voluptatem id repellendus ut laborum
-              laboriosam debitis.
-            </p>
-
-            <Button variant="ghost" className="flex items-center justify-start gap-2">
-              <CornerDownRight className="text-orange-500" />
-              Get in touch
-            </Button>
           </div>
           <ul className="lg:pl-22 relative col-span-4 w-full">
             {process.map((step, index) => (
