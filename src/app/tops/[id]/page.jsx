@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { tops } from '@/lib/tops'
 import Navbar from '@/components/ui/navbar'
-import Footer from '@/components/footer/footer'
+import {Footer} from '@/components/footer/footer'
 import TopOverview from '@/components/blocks/tops/overview/page'
 
 export default async function TopPage({ params }) {

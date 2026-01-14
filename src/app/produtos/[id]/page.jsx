@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { products } from '@/lib/produtos'
 import Navbar from '@/components/ui/navbar'
-import Footer from '@/components/footer/footer'
+import {Footer} from '@/components/footer/footer'
 import ProdutosOverview from '@/components/blocks/products/overview'
 
 export default async function BolsaPage({ params }) {
