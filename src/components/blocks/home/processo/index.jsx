@@ -29,7 +29,7 @@ const Process1 = () => {
   return (
     <section className="py-12">
       <div className="container">
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-6 lg:gap-20">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-6 ms-4 lg:gap-20">
           <div className="top-10 col-span-2 h-fit w-fit gap-3 space-y-7 py-8 lg:sticky">
             <div
               className="relative w-fit text-5xl font-semibold tracking-tight lg:text-7xl">
