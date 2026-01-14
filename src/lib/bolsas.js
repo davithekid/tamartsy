@@ -3,7 +3,7 @@ export const bolsas = [
     id: 1,
     title: 'Bolsa Eclipse Lunar',
     price: 80,
-    description: 'Bolsa em crochê artesanal, feita à mão com acabamento cuidadoso.',
+    description: 'Transmitindo estilo e exclusividade para o seu look.',
     images: [
       '/bolsa.jpeg',
     ],
@@ -46,6 +46,16 @@ export const bolsas = [
     description: 'Versão compacta da Bolsa Duo, prática e cheia de estilo.',
     images: [
       '/bolsa-camesin.jpeg',
+    ],
+    category: 'duo',
+  },
+  {
+    id: 6,
+    title: 'Bolsa Praia',
+    price: 49,
+    description: 'Versão compacta da Bolsa Duo, prática e cheia de estilo.',
+    images: [
+      '/bolsa-praia.png',
     ],
     category: 'duo',
   },

@@ -26,7 +26,7 @@ export const NavMenu = (props) => (
         >
           <Link href="/">Início</Link>
         </NavigationMenuLink>
-      </NavigationMenuItem>
+      </NavigationMenuItem> 
       
       <NavigationMenuItem className={'hidden md:block'}>
         <NavigationMenuTrigger
@@ -62,6 +62,13 @@ export const NavMenu = (props) => (
               description="Peças funcionais e criativas"
             />
 
+            <MenuItem
+              href="/unissex"
+              title="Unissex"
+              icon={LayoutGrid}
+              description="Explorar catálogo completo"
+              highlight 
+            />
             <MenuItem
               href="/produtos"
               title="Ver todos"
@@ -117,6 +124,15 @@ export const NavMenu = (props) => (
         </NavigationMenuLink>
       </NavigationMenuItem>
 
+      <NavigationMenuItem className={'md:hidden'}>
+        <NavigationMenuLink
+          asChild
+          className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
+        >
+          <Link href="/unissex">Unissex</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem> 
+      
       <NavigationMenuItem>
         <NavigationMenuLink
           asChild

@@ -10,6 +10,14 @@ import {
     CarouselItem,
 } from '@/components/ui/carousel'
 import Link from 'next/link'
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table"
 
 const VariadosOverview = ({ product }) => {
     const [selectedImage, setSelectedImage] = useState(0)
@@ -41,7 +49,7 @@ const VariadosOverview = ({ product }) => {
                                         <img
                                             src={img}
                                             alt={product.title}
-                                            className="h-full w-75 object-cover"
+                                            className="h-full object-cover"
                                         />
                                     </CarouselItem>
                                 ))}
@@ -87,6 +95,24 @@ const VariadosOverview = ({ product }) => {
                         <p className="text-3xl font-bold">
                             R$ {product.price}
                         </p>
+                    </div>
+
+                     <div>
+                        <h1 className='font-semibold'>Detalhes do Produto</h1>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead className="">Material</TableHead>
+                                    <TableHead className="text-right font-semibold">Crochê</TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell className="font-medium">INV001</TableCell>
+                                    <TableCell className="text-right">$250.00</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
                     </div>
 
                     <div className="grid gap-3 sm:grid-cols-2">

@@ -15,6 +15,7 @@ const allProducts = [
   { id: 3, title: 'Eclax de Praia', image: './bolsa-praia.jpeg', price: 99, category: 'mais vendidos' },
   { id: 4, title: 'Bolsa Baguete', image: './bolsa-baguete-batom.jpeg', price: 99, category: 'baguete' },
   { id: 5, title: 'Bolsa Duo', image: './bolsa-camesin.jpeg', price: 49, category: 'duo' },
+  { id: 6, title: 'Bolsa Praia', image: './bolsa-praia.png', price: 49, category: 'duo' },
 ]
 
 const categories = ['todas', 'baguete', 'duo']

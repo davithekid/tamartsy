@@ -38,6 +38,18 @@ const footerLinks = [
     title: "Contato",
     href: "/contato",
   },
+  {
+    title: "Feminino",
+    href: "/feminino",
+  },
+  {
+    title: "Masculino",
+    href: "/masculino",
+  },
+  {
+    title: "Unissex",
+    href: "/unissex",
+  },
 ];
 
 const Footer = () => {

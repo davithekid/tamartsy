@@ -103,7 +103,7 @@ const IndustriesResponsive = ({ industries, industryLabel }) => (
       </Carousel>
     </div>
 
-    <div className="hidden grid-cols-2 gap-6 lg:grid xl:grid-cols-4">
+    <div className="hidden grid-cols-2 gap-6 lg:grid xl:grid-cols-5">
       {industries.map((industry, index) => (
         <IndustryCard
           key={index}
@@ -147,9 +147,17 @@ const Industries1 = ({
       name: 'Variados',
       description:
         'Saquinhos e acessórios práticos.',
-      image: './cyberhsot.png',
+      image: './saquinho.png',
       imageAlt: 'Ilustração de acessórios',
       url: '/variados',
+    }, 
+      {
+      name: 'Unissex',
+      description:
+        'Bolsas sacos feitas com fio barbante.',
+      image: './bag.png',
+      imageAlt: 'Ilustração de acessórios',
+      url: '/unissex',
     },
   ],
 }) => {

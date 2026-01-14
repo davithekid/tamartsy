@@ -10,9 +10,9 @@ import {
 } from '@/components/ui/carousel'
 
 const allProducts = [
-  { id: 1, title: 'Top Paparazzi', image: './top.png', price: 80, category: 'mais vendidos' },
-  { id: 2, title: 'Regata Joy', image: './regata.jpeg', price: 75, category: 'mais vendidos' },
-  { id: 3, title: 'Top Paparazzi Ciano', image: './regata-verde.jpeg', price: 75, category: 'mais vendidos' },
+  { id: 1, title: 'Top Paparazzi', image: './top.png', price: 120, category: 'mais vendidos', size: 'lg' },
+  { id: 2, title: 'Regata Joy', image: './regata-joy.png', price: 120, category: 'mais vendidos' ,size: 'lg'},
+  { id: 3, title: 'Top Glamour', image: './top-paparazzi-verde.jpeg', price: 135, category: 'mais vendidos', size: 'lg' },
 ]
 
 const categories = ['todos', 'tops', 'regatas']

@@ -10,7 +10,8 @@ import {
 } from '@/components/ui/carousel'
 
 const allProducts = [
-  { id: 1, title: 'Cybershot', image: './cyberhsot.png', price: 80, category: 'mais vendidos' },
+  { id: 1, title: 'Cybershot', image: './cyberhsot.png', price: 25, category: 'mais vendidos' },
+  { id: 2, title: 'Cybershot', image: './saquinho-verde.png', price: 25, category: 'mais vendidos' },
 ]
 
 const categories = ['todos']
