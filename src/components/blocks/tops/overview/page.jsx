@@ -10,6 +10,14 @@ import {
     CarouselItem,
 } from '@/components/ui/carousel'
 import Link from 'next/link'
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table"
 
 const TopOverview = ({ product }) => {
     const [selectedImage, setSelectedImage] = useState(0)
@@ -88,6 +96,25 @@ const TopOverview = ({ product }) => {
                             R$ {product.price}
                         </p>
                     </div>
+
+                     <div>
+                        <h1 className='font-semibold'>Detalhes do Produto</h1>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead className="">Material</TableHead>
+                                    <TableHead className="text-right font-semibold">Crochê</TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                <TableRow>
+                                    <TableCell className="font-medium">INV001</TableCell>
+                                    <TableCell className="text-right">$250.00</TableCell>
+                                </TableRow>
+                            </TableBody>
+                        </Table>
+                    </div>
+
 
                     <div>
                         <h1 className='font-semibold'>Tamanhos Disponíveis</h1>

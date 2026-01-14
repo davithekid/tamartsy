@@ -2,7 +2,7 @@ export const tops = [
   {
     id: 1,
     title: 'Top Paparazzi',
-    price: 80,
+    price: 120,
     description: 'Top em crochê feito à mão, ideal pra looks cheios de atitude.',
     images: [
       '/top.png',
@@ -13,10 +13,10 @@ export const tops = [
   {
     id: 2,
     title: 'Regata Joy',
-    price: 75,
+    price: 120,
     description: 'Regata em crochê leve e confortável, perfeita para o dia a dia.',
     images: [
-      '/regata.jpeg',
+      '/regata-joy.png',
     ],
     category: 'mais vendidos',
     size: ['P', 'M', 'G', 'GG']
