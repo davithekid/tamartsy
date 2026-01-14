@@ -17,7 +17,7 @@ import {
 import Link from "next/link"
 
 const Contact = () => (
-  <div className="flex min-h-screen items-center justify-center py-20">
+  <div className="flex min-h-screen items-center justify-center py-12">
     <div className="mx-auto w-full max-w-(--breakpoint-xl) px-6 xl:px-0">
 
       <span className="text-sm font-semibold uppercase text-muted-foreground">

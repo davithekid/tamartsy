@@ -14,14 +14,21 @@ const easeTransition = [0.25, 0.1, 0.25, 1]
 
 const IndustryCard = ({ industry, industryLabel }) => (
   <motion.div
-    className="group relative h-[420px] overflow-hidden rounded-3xl hover:opacity-60 cursor-pointer"
+    className="group relative h-[420px] overflow-hidden rounded-3xl cursor-pointer hover:opacity-70 duration-150"
     whileHover="hover"
     initial="initial"
   >
+    <Link 
+      href={industry.url} 
+      className="absolute inset-0 z-50"
+    >
+      <span className="sr-only">Ver {industry.name}</span>
+    </Link>
+
     <img
       src={industry.image}
       alt={industry.imageAlt}
-      className="absolute inset-0 h-full w-full object-cover"
+      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 "
     />
 
     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
@@ -32,7 +39,7 @@ const IndustryCard = ({ industry, industryLabel }) => (
         hover: { y: -20, opacity: 0 },
       }}
       transition={{ duration: 0.3 }}
-      className="absolute bottom-8 left-6 z-10 text-2xl font-bold text-white"
+      className="absolute bottom-8 left-6 z-10 text-2xl font-bold text-white pointer-events-none"
     >
       {industry.name}
     </motion.h3>
@@ -43,7 +50,7 @@ const IndustryCard = ({ industry, industryLabel }) => (
         hover: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.4, ease: easeTransition }}
-      className="absolute inset-0 z-20 flex flex-col justify-end p-6 text-white"
+      className="absolute inset-0 z-20 flex flex-col justify-end p-6 text-white pointer-events-none"
     >
       <span className="mb-2 text-sm uppercase tracking-wide text-white/70">
         {industryLabel}
@@ -52,18 +59,19 @@ const IndustryCard = ({ industry, industryLabel }) => (
         {industry.description}
       </p>
 
-      <Button
-        size="sm"
-        className="w-fit rounded-full bg-white/90 text-black hover:bg-white"
-        asChild
-      >
-        <Link href={industry.url}>Explorar</Link>
-      </Button>
+      <div className="w-fit">
+        <Button
+          size="sm"
+          className="rounded-full bg-white/90 text-black hover:bg-white pointer-events-none"
+          asChild={false} 
+        >
+          <span>Explorar</span>
+        </Button>
+      </div>
     </motion.div>
 
-    {/* Plus icon */}
     <motion.div
-      className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur"
+      className="absolute right-4 top-4 z-30 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur pointer-events-none"
       variants={{
         initial: { rotate: 0 },
         hover: { rotate: 90 },
@@ -74,7 +82,6 @@ const IndustryCard = ({ industry, industryLabel }) => (
     </motion.div>
   </motion.div>
 )
-
 
 const IndustriesResponsive = ({ industries, industryLabel }) => (
   <>

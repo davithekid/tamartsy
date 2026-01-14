@@ -8,6 +8,13 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import Link from "next/link"
+import { 
+  ShoppingBag, 
+  Shirt, 
+  Crown, 
+  Shapes, 
+  LayoutGrid 
+} from "lucide-react"
 
 export const NavMenu = (props) => (
   <NavigationMenu {...props}>
@@ -20,6 +27,7 @@ export const NavMenu = (props) => (
           <Link href="/">Início</Link>
         </NavigationMenuLink>
       </NavigationMenuItem>
+      
       <NavigationMenuItem className={'hidden md:block'}>
         <NavigationMenuTrigger
           className={`${navigationMenuTriggerStyle()} bg-background-80 px-4 font-semibold uppercase tracking-widest transition-colors hover:text-primary`}
@@ -27,45 +35,40 @@ export const NavMenu = (props) => (
           Produtos
         </NavigationMenuTrigger>
 
-        <NavigationMenuContent
-          className="
-            mt-2 rounded-2xl border border-border/50 
-            bg-background/95 p-4 shadow-xl backdrop-blur
-            data-[motion=from-start]:animate-in
-            data-[motion=from-start]:fade-in
-            data-[motion=from-start]:zoom-in-95
-          "
-        >
-          <div className="grid w-[320px] gap-2">
+        <NavigationMenuContent>
+          <div className="grid w-[300px] p-2"> 
             <MenuItem
               href="/bolsas"
               title="Bolsas"
+              icon={ShoppingBag}
               description="Design autoral e acabamento premium"
             />
             <MenuItem
               href="/tops"
               title="Tops"
+              icon={Shirt}
               description="Design autoral e acabamento premium"
             />
             <MenuItem
               href="/headpiece"
               title="Headpiece"
+              icon={Crown}
               description="Acessórios que elevam o visual"
             />
             <MenuItem
               href="/variados"
               title="Variados"
+              icon={Shapes}
               description="Peças funcionais e criativas"
             />
 
-            <div className="mt-2 border-t pt-2">
-              <MenuItem
-                href="/produtos"
-                title="Ver todos"
-                description="Explorar catálogo completo"
-                highlight
-              />
-            </div>
+            <MenuItem
+              href="/produtos"
+              title="Ver todos"
+              icon={LayoutGrid}
+              description="Explorar catálogo completo"
+              highlight 
+            />
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
@@ -136,17 +139,28 @@ export const NavMenu = (props) => (
   </NavigationMenu>
 )
 
-const MenuItem = ({ href, title, highlight }) => (
+const MenuItem = ({ href, title, description, icon: Icon, highlight }) => (
   <Link
     href={href}
     className={`
-      group rounded-xl p-3 transition-all
-      hover:bg-muted/60 hover:shadow-sm
+      group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors 
+      hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground
       ${highlight ? "bg-muted/40" : ""}
     `}
   >
-    <div className="flex flex-col">
-      <span className="font-medium">{title}</span>
+    <div className="flex items-center gap-3">
+      {Icon && (
+        <Icon className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+      )}
+      
+      <div className="flex flex-col gap-1">
+        <span className="text-sm font-medium leading-none">{title}</span>
+        {description && (
+          <p className="line-clamp-2 text-xs leading-snug text-muted-foreground">
+            {description}
+          </p>
+        )}
+      </div>
     </div>
   </Link>
 )
