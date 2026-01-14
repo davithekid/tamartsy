@@ -28,12 +28,12 @@ export default function Hero() {
         </Badge>
 
         <Image
-          src="/logo.svg"
+          src="/logo-carnaval.svg"
           width={420}
           height={420}
           alt="logo"
           priority
-          className="mx-auto w-[280px] sm:w-[360px] md:w-[420px]"
+          className="mx-auto w-[320] sm:w-[420px] md:w-[520px]"
         />
 
         <p className="mt-4 text-foreground/80 md:text-lg font-serif">

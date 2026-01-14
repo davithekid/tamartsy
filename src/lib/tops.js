@@ -8,6 +8,7 @@ export const tops = [
       '/top.png',
     ],
     category: 'mais vendidos',
+    size: ['P', 'M', 'G', 'GG']
   },
   {
     id: 2,
@@ -18,15 +19,17 @@ export const tops = [
       '/regata.jpeg',
     ],
     category: 'mais vendidos',
+    size: ['P', 'M', 'G', 'GG']
   },
   {
     id: 3,
-    title: 'Top Paparazzi Ciano',
-    price: 75,
+    title: 'Top Glamour',
+    price: [135],
     description: 'Versão ciano do Top Paparazzi, vibrante e cheia de personalidade.',
     images: [
-      '/regata-verde.jpeg',
+      '/top-paparazzi-verde.jpeg',
     ],
     category: 'mais vendidos',
+    size: ['P', 'M', 'G', 'GG']
   },
 ];

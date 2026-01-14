@@ -3,6 +3,7 @@ import Testimonial04 from "@/components/blocks/home/feedbacks";
 import Hero from "@/components/blocks/home/hero/hero";
 import { Process1 } from "@/components/blocks/home/processo";
 import { Industries1 } from "@/components/blocks/home/produtos";
+import { PromoBanner1 } from "@/components/blocks/promo-banner";
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/ui/navbar";
 
@@ -11,8 +12,8 @@ export default function Home() {
     <>
       <header>
         <Navbar />
+        {/* <PromoBanner1 />*/}
       </header>
-
 
       <main className="mx-auto container">
         <Hero />

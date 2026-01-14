@@ -41,7 +41,7 @@ const TopOverview = ({ product }) => {
                                         <img
                                             src={img}
                                             alt={product.title}
-                                            className="h-full w-75 object-cover"
+                                            className="h-full w-full object-cover"
                                         />
                                     </CarouselItem>
                                 ))}
@@ -87,6 +87,19 @@ const TopOverview = ({ product }) => {
                         <p className="text-3xl font-bold">
                             R$ {product.price}
                         </p>
+                    </div>
+
+                    <div>
+                        <h1 className='font-semibold'>Tamanhos Disponíveis</h1>
+
+                        {product.size.map((sizes) => (
+                            <Button
+                                key={sizes}
+                                className="rounded-md border mt-1 px-4 py-2 text-sm hover:bg-black hover:text-white mr-2"
+                            >
+                                {sizes}
+                            </Button>
+                        ))}
                     </div>
 
                     <div className="grid gap-3 sm:grid-cols-2">
