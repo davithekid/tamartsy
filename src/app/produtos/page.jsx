@@ -1,5 +1,5 @@
 import Products from "@/components/blocks/products/hero";
-import Footer from "@/components/footer/footer";
+import {Footer} from "@/components/footer/footer";
 import Navbar from "@/components/ui/navbar";
 
 export default function Produtos() {

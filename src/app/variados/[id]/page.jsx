@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { variados } from '@/lib/variados'
 import Navbar from '@/components/ui/navbar'
-import Footer from '@/components/footer/footer'
+import {Footer} from '@/components/footer/footer'
 import VariadosOverview from '@/components/blocks/variados/overview'
 
 export default async function BolsaPage({ params }) {

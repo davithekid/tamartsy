@@ -1,6 +1,6 @@
 import HeadpieceHero from "@/components/blocks/headpiece/hero";
 import HeadpieceProducts from "@/components/blocks/headpiece/products/page";
-import Footer from "@/components/footer/footer";
+import {Footer} from "@/components/footer/footer";
 import Navbar from "@/components/ui/navbar";
 
 export default function Headpiece() {

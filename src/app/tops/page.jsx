@@ -1,6 +1,6 @@
 import TopsHero from "@/components/blocks/tops/hero";
 import TopProdutos from "@/components/blocks/tops/produtos";
-import Footer from "@/components/footer/footer";
+import {Footer} from "@/components/footer/footer";
 import Navbar from "@/components/ui/navbar";
 
 export default function Tops() {
