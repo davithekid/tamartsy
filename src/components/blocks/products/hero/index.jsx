@@ -102,10 +102,10 @@ const Products = () => {
       <div id="vendidas" className="space-y-8">
         <header className="space-y-2">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Queridinhos da loja
+            Queridinhos da Tami
           </h2>
           <p className="max-w-[70ch] text-muted-foreground">
-            As peças mais amadas, escolhidas por quem já conhece.
+            Campeões de Venda.
           </p>
         </header>
 
