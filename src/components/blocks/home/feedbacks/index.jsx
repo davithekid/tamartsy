@@ -50,7 +50,7 @@ const testimonials = [
 
 export default function Testimonial04() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center py-16 gap-12">
+    <section className="min-h-screen flex flex-col justify-center items-center py-8 gap-12">
       <h2 className="text-5xl font-semibold text-center tracking-tight px-6">
         Feedbacks de clientes
       </h2>
