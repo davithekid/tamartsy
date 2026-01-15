@@ -41,19 +41,19 @@ export const NavMenu = (props) => (
               href="/bolsas"
               title="Bolsas"
               icon={ShoppingBag}
-              description="Design autoral e acabamento premium"
+              description="Estilo Unico!"
             />
             <MenuItem
               href="/tops"
               title="Tops"
               icon={Shirt}
-              description="Design autoral e acabamento premium"
+              description="Para Subir o Seu Look!"
             />
             <MenuItem
               href="/headpiece"
               title="Headpiece"
               icon={Crown}
-              description="Acessórios que elevam o visual"
+              description="Elevar o visual"
             />
             <MenuItem
               href="/variados"
@@ -66,7 +66,7 @@ export const NavMenu = (props) => (
               href="/unissex"
               title="Unissex"
               icon={LayoutGrid}
-              description="Explorar catálogo completo"
+              description="Para Todos"
               highlight 
             />
             <MenuItem
