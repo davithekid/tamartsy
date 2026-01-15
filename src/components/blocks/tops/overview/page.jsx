@@ -97,6 +97,19 @@ const TopOverview = ({ product }) => {
                         </p>
                     </div>
 
+                    <div>
+                        <h1 className='font-semibold'>Tamanhos Disponíveis</h1>
+
+                        {product.size.map((sizes) => (
+                            <Button
+                                key={sizes}
+                                className="rounded-md border mt-1 px-4 py-2 text-sm hover:bg-black hover:text-white mr-2"
+                            >
+                                {sizes}
+                            </Button>
+                        ))}
+                    </div>
+                    
                      <div>
                         <h1 className='font-semibold'>Detalhes do Produto</h1>
                         <Table>
@@ -116,18 +129,6 @@ const TopOverview = ({ product }) => {
                     </div>
 
 
-                    <div>
-                        <h1 className='font-semibold'>Tamanhos Disponíveis</h1>
-
-                        {product.size.map((sizes) => (
-                            <Button
-                                key={sizes}
-                                className="rounded-md border mt-1 px-4 py-2 text-sm hover:bg-black hover:text-white mr-2"
-                            >
-                                {sizes}
-                            </Button>
-                        ))}
-                    </div>
 
                     <div className="grid gap-3 sm:grid-cols-2">
                         <div className="flex items-center gap-3 rounded-xl border p-4">

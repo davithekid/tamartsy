@@ -42,19 +42,28 @@ const ProductOverview1 = ({ product }) => {
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
                 <div className="space-y-4">
                     <div className="overflow-hidden rounded-2xl border bg-muted/20">
-                        <Carousel setApi={setCarouselApi}>
-                            <CarouselContent>
-                                {product.images.map((img, index) => (
-                                    <CarouselItem key={index}>
-                                        <img
-                                            src={img}
-                                            alt={product.title}
-                                            className="h-full  object-cover"
-                                        />
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                        </Carousel>
+                        {product.images.length > 1 ? (
+                            <Carousel setApi={setCarouselApi}>
+                                <CarouselContent>
+                                    {product.images.map((img, index) => (
+                                        <CarouselItem key={index}>
+                                            <img
+                                                src={img}
+                                                alt={product.title}
+                                                className="w-full object-contain"
+                                            />
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                            </Carousel>
+                        ) : (
+                            <img
+                                src={product.images[0]}
+                                alt={product.title}
+                                className=" w-full object-contain"
+                            />
+                        )}
+
                     </div>
                     <div className="flex gap-3">
                         {product.images.map((img, index) => (
@@ -96,6 +105,18 @@ const ProductOverview1 = ({ product }) => {
                             R$ {product.price}
                         </p>
                     </div>
+                    <div>
+                        <h1 className='font-semibold'>Cores Disponíveis</h1>
+
+                        {product.color.map((colors) => (
+                            <Button
+                                key={colors}
+                                className="rounded-md border mt-1 px-4 py-2 text-sm hover:bg-black hover:text-white mr-2"
+                            >
+                                {colors}
+                            </Button>
+                        ))}
+                    </div>
 
                     <div>
                         <h1 className='font-semibold'>Detalhes do Produto</h1>
@@ -103,13 +124,17 @@ const ProductOverview1 = ({ product }) => {
                             <TableHeader>
                                 <TableRow>
                                     <TableHead className="">Material</TableHead>
-                                    <TableHead className="text-right font-semibold">Crochê</TableHead>
+                                    <TableHead className="text-right font-semibold">{product.material}</TableHead>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 <TableRow>
-                                    <TableCell className="font-medium">INV001</TableCell>
-                                    <TableCell className="text-right">$250.00</TableCell>
+                                    <TableCell className="font-medium">Tamanho</TableCell>
+                                    <TableCell className="text-right">{product.tamanho}</TableCell>
+                                </TableRow>
+                                <TableRow>
+                                    <TableCell className="font-medium">Altura da Alça</TableCell>
+                                    <TableCell className="text-right">{product.alca}</TableCell>
                                 </TableRow>
                             </TableBody>
                         </Table>
