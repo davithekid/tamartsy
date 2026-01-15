@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 const Cta10 = ({
   heading = "Gostou de alguma peça?",
-  description = "Entre em contato na loja do instagagram e garanta a sua!",
+  description = "Entre em contato na loja do instagram e garanta a sua!",
   buttons = {
     primary: {
       text: "Falar comigo",
