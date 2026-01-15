@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { Plus, ArrowRight } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import {
   Carousel,
   CarouselContent,
@@ -21,51 +21,58 @@ const allProducts = [
 
 const categories = ['todas', 'baguete', 'duo']
 
-const ProductCard = ({ product }) => (
-  <div className="group flex flex-col gap-4">
-    <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-zinc-50 border border-zinc-100">
-      {product.category === 'mais vendidos' && (
-        <div className="absolute left-4 top-4 z-10">
-          <span className="rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-900 shadow-sm backdrop-blur-md">
+const ProductCard = ({ product }) => {
+  const productLink = `/bolsas/${product.id}`
+  const isBestSeller = product.category === 'mais vendidos'
+
+  return (
+    <div className="group flex flex-col gap-4">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-muted/30 border">
+        <Link
+          href={productLink}
+          className="absolute inset-0 z-10"
+        >
+          <span className="sr-only">Ver detalhes de {product.title}</span>
+        </Link>
+        {isBestSeller && (
+          <span className="absolute left-3 top-3 z-20 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black shadow-sm backdrop-blur-md">
             Destaque
           </span>
+        )}
+
+        <img
+          src={product.image}
+          alt={product.title}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className={cn(
+          "absolute inset-x-0 bottom-0 z-20 p-4 transition-all duration-300 flex justify-center",
+          "lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+        )}>
+          <Button
+            className="w-full rounded-xl bg-white/90 text-black hover:bg-white shadow-xl font-bold"
+            asChild
+          >
+            <Link href={productLink}>
+              Ver Detalhes
+            </Link>
+          </Button>
         </div>
-      )}
-      
-      <img
-        src={product.image}
-        alt={product.title}
-        className="h-full w-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110"
-      />
-
-      <div className="absolute inset-0 flex items-center justify-center bg-black/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-        <Button 
-          variant="secondary"
-          className="rounded-full bg-white px-6 font-bold text-zinc-900 shadow-2xl hover:bg-zinc-100"
-          asChild
-        >
-          <Link href={`/bolsas/${product.id}`}>
-            Ver Detalhes
-          </Link>
-        </Button>
       </div>
+      <Link href={productLink} className="flex flex-col gap-1 px-1 text-inherit">
+        <div className="flex items-start justify-between">
+          <h3 className="text-base font-medium group-hover:text-muted-foreground transition-colors">
+            {product.title}
+          </h3>
+          <span className="text-sm font-bold">
+            R$ {product.price.toFixed(2).replace('.', ',')}
+          </span>
+        </div>
+        <p className="text-xs text-muted-foreground capitalize">{product.type || product.category}</p>
+      </Link>
     </div>
-
-    <div className="flex flex-col gap-1 px-2">
-      <div className="flex items-center justify-between">
-        <h3 className="text-lg font-bold tracking-tight">
-          {product.title}
-        </h3>
-        <span className="text-base font-medium text-zinc-500">
-          R$ {product.price.toFixed(2).replace('.', ',')}
-        </span>
-      </div>
-      <p className="text-xs font-medium uppercase tracking-widest text-zinc-400">
-        {product.type || 'Artesanal'}
-      </p>
-    </div>
-  </div>
-)
+  )
+}
 
 const ProductsResponsive = ({ items, cols = 4 }) => {
   return (
@@ -76,7 +83,7 @@ const ProductsResponsive = ({ items, cols = 4 }) => {
             {items.map((product) => (
               <CarouselItem
                 key={product.id}
-                className="basis-[82%] pl-4"
+                className="basis-[82%] sm:basis-[60%] pl-4"
               >
                 <ProductCard product={product} />
               </CarouselItem>
@@ -87,7 +94,7 @@ const ProductsResponsive = ({ items, cols = 4 }) => {
 
       <div
         className={cn(
-          "hidden gap-x-8 gap-y-12 lg:grid",
+          "hidden gap-6 lg:grid",
           cols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"
         )}
       >
@@ -107,20 +114,20 @@ const ProductCard2 = () => {
   )
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 lg:py-32">
-      <div id="vendidas" className="mb-32">
-        <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-3">
+    <section className="mx-auto max-w-7xl px-4 py-14 sm:px-8 space-y-20">
+      <div id="vendidas" className="space-y-8">
+        <header className="flex flex-col md:flex-row md:items-end border-b justify-between pb-6 gap-6">
+          <div className="space-y-2">
             <h2 className="text-5xl font-black tracking-tighter lg:text-6xl">
               Destaques
             </h2>
-            <p className="max-w-[50ch] text-lg text-zinc-500 font-light leading-relaxed">
-              Feitas à mão, únicas e perfeitas pra elevar seu look com a alma do artesanato.
+            <p className="max-w-[70ch] text-muted-foreground leading-relaxed">
+              Feitas à mão, únicas e perfeitas pra elevar seu look.
             </p>
           </div>
-          <Button variant="link" className="p-0  font-bold tracking-widest uppercase text-xs h-fit">
-            Ver Coleção Completa <ArrowRight className="ml-2 size-4" />
-          </Button>
+          <Link href="#catalogo" className="hidden text-sm font-bold uppercase tracking-widest hover:text-muted-foreground lg:block transition-colors">
+            Ver tudo
+          </Link>
         </header>
 
         <ProductsResponsive
@@ -130,28 +137,28 @@ const ProductCard2 = () => {
       </div>
 
       <div id="catalogo" className="space-y-12">
-        <header className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between pt-16">
+        <header className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between ">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight ">
+            <h2 className="text-3xl font-bold tracking-tight">
               Explore o Catálogo
             </h2>
-            <p className="text-zinc-500">Filtre por estilo e encontre sua próxima bolsa favorita.</p>
+            <p className="text-muted-foreground">Filtre por estilo e encontre sua próxima bolsa favorita.</p>
           </div>
 
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
-              <Button
+              <button
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={cn(
-                  "rounded-full px-8 py-2.5 text-xs font-bold uppercase tracking-widest transition-all border",
+                  "rounded-full px-6 py-2 text-xs font-bold uppercase tracking-widest transition-all",
                   filter === cat
-                    ? "bg-zinc-900 text-white border-zinc-900 shadow-xl"
-                    : "bg-white text-zinc-400 border-zinc-200 hover:border-zinc-900 hover:text-zinc-900"
+                    ? "bg-zinc-900 text-white shadow-lg"
+                    : "bg-zinc-200  dark:text-background"
                 )}
               >
                 {cat}
-              </Button>
+              </button>
             ))}
           </div>
         </header>

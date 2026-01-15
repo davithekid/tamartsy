@@ -21,7 +21,6 @@ const categories = ['todos', 'tops', 'regatas']
 
 const ProductCard = ({ product }) => (
   <div className="group flex flex-col gap-4">
-    {/* Container da Imagem */}
     <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100">
       {product.featured && (
         <span className="absolute left-3 top-3 z-10 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-zinc-900 shadow-sm backdrop-blur-md">
