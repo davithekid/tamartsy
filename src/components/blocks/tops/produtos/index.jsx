@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { ShoppingBag, Plus } from 'lucide-react'
 import {
   Carousel,
   CarouselContent,
@@ -19,46 +18,58 @@ const allProducts = [
 
 const categories = ['todos', 'tops', 'regatas']
 
-const ProductCard = ({ product }) => (
-  <div className="group flex flex-col gap-4">
-    <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100">
-      {product.featured && (
-        <span className="absolute left-3 top-3 z-10 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-zinc-900 shadow-sm backdrop-blur-md">
-          Destaque
-        </span>
-      )}
-      
-      <img
-        src={product.image}
-        alt={product.title}
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-      />
+const ProductCard = ({ product }) => {
+  const productLink = `/tops/${product.id}`
+  const isBestSeller = product.category === 'mais vendidos' || product.featured
 
-      <div className="absolute inset-0 flex items-end justify-center bg-black/5 p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <Button 
-          className="w-full rounded-xl bg-white text-zinc-900 hover:bg-zinc-100 shadow-xl translate-y-4 transition-transform duration-300 group-hover:translate-y-0"
-          asChild
+  return (
+    <div className="group flex flex-col gap-4">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-muted/30 border">
+        <Link
+          href={productLink}
+          className="absolute inset-0 z-10"
         >
-          <Link href={`/tops/${product.id}`}>
-            Ver Detalhes
-          </Link>
-        </Button>
-      </div>
-    </div>
+          <span className="sr-only">Ver detalhes de {product.title}</span>
+        </Link>
+        {isBestSeller && (
+          <span className="absolute left-3 top-3 z-20 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-black shadow-sm backdrop-blur-md">
+            Destaque
+          </span>
+        )}
 
-    <div className="flex flex-col gap-1 px-1">
-      <div className="flex items-start justify-between">
-        <h3 className="text-base font-medium group-hover:text-primary transition-colors">
-          {product.title}
-        </h3>
-        <span className="text-sm font-bold ">
-          R$ {product.price.toFixed(2).replace('.', ',')}
-        </span>
+        <img
+          src={product.image}
+          alt={product.title}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+        <div className={cn(
+          "absolute inset-x-0 bottom-0 z-20 p-4 transition-all duration-300 flex justify-center",
+          "lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0"
+        )}>
+          <Button
+            className="w-full rounded-xl bg-white/90 text-black hover:bg-white shadow-xl font-bold"
+            asChild
+          >
+            <Link href={productLink}>
+              Ver Detalhes
+            </Link>
+          </Button>
+        </div>
       </div>
-      <p className="text-xs text-zinc-400 capitalize">{product.category}</p>
+      <Link href={productLink} className="flex flex-col gap-1 px-1 text-inherit">
+        <div className="flex items-start justify-between">
+          <h3 className="text-base font-medium group-hover:text-muted-foreground transition-colors leading-tight">
+            {product.title}
+          </h3>
+          <span className="text-sm font-bold">
+            R$ {product.price.toFixed(2).replace('.', ',')}
+          </span>
+        </div>
+        <p className="text-xs text-muted-foreground capitalize">{product.type || product.category}</p>
+      </Link>
     </div>
-  </div>
-)
+  )
+}
 
 const ProductsResponsive = ({ items, cols = 4 }) => {
   return (
@@ -108,7 +119,7 @@ const TopProdutos = () => {
               Os mais desejados
             </h2>
             <p className="text-zinc-500">
-             Para looks cheios de atitude.
+              Para looks cheios de atitude.
             </p>
           </div>
           <Link href="#catalogo" className="hidden text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 lg:block transition-colors">
@@ -131,7 +142,7 @@ const TopProdutos = () => {
             <p className="text-zinc-500">Explore cada detalhe das nossas criações.</p>
           </div>
 
-  
+
           <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
@@ -151,7 +162,7 @@ const TopProdutos = () => {
         </header>
 
         <ProductsResponsive items={filteredProducts} cols={4} />
-        
+
         {filteredProducts.length === 0 && (
           <div className="py-20 text-center text-zinc-400 border-2 border-dashed rounded-3xl">
             Nenhum produto encontrado nesta categoria.
