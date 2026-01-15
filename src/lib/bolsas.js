@@ -19,7 +19,7 @@ export const bolsas = [
     price: 75,
     description: 'Modelo versátil em crochê, ideal para o dia a dia.',
     images: [
-      '/bolsa-roxa.jpeg',
+      '/bolsa-duo.jpeg',
       '/bolsa-duo-2.jpeg',
     ],
     category: 'mais vendidos',
