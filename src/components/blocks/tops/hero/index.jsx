@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
-import { ArrowRight, ShoppingBag } from 'lucide-react'
+import { ArrowRight, ShoppingBag, Sparkles } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import Link from 'next/link'
 
@@ -19,16 +19,16 @@ const storeData = {
         },
         {
             id: 2,
-            name: 'Top Paparazzi',
+            name: 'Top Sirena',
             image: './top.png',
             tag: 'Novidade',
-        }, {
+        }, 
+        {
             id: 3,
             name: 'Regata Joy',
             image: './regata.jpeg',
-            tag: 'Novidade',
+            tag: 'Exclusivo',
         },
-
     ],
 }
 
@@ -38,85 +38,85 @@ export default function TopsHero() {
 
     useEffect(() => {
         if (!api) return
-
         const interval = setInterval(() => {
             const next = (currentSlide + 1) % storeData.featuredProducts.length
             api.scrollTo(next)
             setCurrentSlide(next)
         }, 5000)
-
         return () => clearInterval(interval)
     }, [api, currentSlide])
 
     return (
-        <section className="relative overflow-hidden bg-background">
-            <div className="pointer-events-none absolute inset-0 bg-radial from-primary/10 via-transparent to-transparent" />
+        <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-zinc-200 py-10 md:py-0">
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl" />
 
-            <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-8">
-                <div className="grid items-center gap-16 lg:grid-cols-2">
-                    <header className="space-y-8">
-                        <Badge className="w-fit rounded-full">Coleção exclusiva</Badge>
+            <div className="relative mx-auto max-w-7xl px-6 py-12 lg:px-8 w-full">
+                <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+                    <div className="flex flex-col gap-8 order-2 lg:order-1">
+                        <div className="space-y-6">
+                            <Badge variant="secondary" className="w-fit rounded-full px-4 py-1.5 bg-zinc-100 text-zinc-900 border-none font-medium">
+                                <Sparkles className="mr-2 size-3.5 fill-zinc-900" />
+                                Nova Coleção
+                            </Badge>
 
-                        <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-                            {storeData.title}
-                        </h1>
+                            <h1 className="text-6xl font-black tracking-tighter sm:text-7xl lg:text-8xl text-zinc-900 leading-[0.9]">
+                                {storeData.title}
+                            </h1>
 
-                        <p className="max-w-xl text-lg text-muted-foreground">
-                            {storeData.subtitle}
-                        </p>
-
-                        <div className="flex gap-4">
-                            <Link href="#vendidas" scroll={true}>
-                                <Button size="lg" className="rounded-full px-8">
-                                    Mais vendidas <ArrowRight className="ml-2 size-4" />
-                                </Button>
-                            </Link>
-
-
-                            <Link href="#catalogo" scroll={true}>
-                                <Button size="lg" variant="outline" className="rounded-full px-8">
-                                    <ShoppingBag className="mr-2 size-4" />
-                                    Catálogo
-                                </Button>
-                            </Link>
-
+                            <p className="max-w-md text-lg md:text-xl text-zinc-500 leading-relaxed font-light">
+                                {storeData.subtitle}
+                            </p>
                         </div>
-                    </header>
 
-                    <div className="relative h-[520px]">
-                        <Carousel setApi={setApi} opts={{ loop: true }}>
-                            <CarouselContent>
-                                {storeData.featuredProducts.map((product) => (
-                                    <CarouselItem key={product.id}>
-                                        <div className="relative h-[520px] overflow-hidden rounded-3xl">
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="h-full w-full object-cover"
-                                            />
+                        <div className="flex-col sm:flex-row gap-4 hidden md:flex">
+                            <Button size="lg" className="rounded-full h-14 px-10 text-base font-bold shadow-xl shadow-zinc-200 hover:shadow-none transition-all">
+                                Ver mais vendidas <ArrowRight className="ml-2 size-5" />
+                            </Button>
 
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                            <Button size="lg" variant="outline" className="rounded-full h-14 px-10 text-base  font-semibold dark:text-background">
+                                <ShoppingBag className="mr-2 size-5" />
+                                Catálogo
+                            </Button>
+                        </div>
+                    </div>
 
-                                            <div className="absolute inset-0 flex flex-col justify-end p-10 text-white">
-                                                <Badge className="w-fit bg-white/90 text-black">
-                                                    {product.tag}
-                                                </Badge>
+                    <div className="relative order-2     lg:order-2">
+                        <div className="relative z-10 mx-auto max-w-[440px] lg:max-w-none">
+                            <Carousel setApi={setApi} opts={{ loop: true }}>
+                                <CarouselContent className="-ml-0">
+                                    {storeData.featuredProducts.map((product) => (
+                                        <CarouselItem key={product.id} className="pl-0">
+                                            <div className="group relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-zinc-100 border border-zinc-200 shadow-2xl">
+                                                <img
+                                                    src={product.image}
+                                                    alt={product.name}
+                                                    className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                                />
 
-                                                <h2 className="mt-3 text-3xl font-semibold">
-                                                    {product.name}
-                                                </h2>
-
-                                                <Button className="mt-4 w-fit rounded-full">
-                                                    Compre agora
-                                                </Button>
+                                                <div className="absolute inset-x-4 bottom-4">
+                                                    <div className="rounded-[2rem] border border-white/20 bg-white/40 p-6 backdrop-blur-xl shadow-lg flex items-center justify-between">
+                                                        <div className="space-y-1">
+                                                            <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-800">
+                                                                {product.tag}
+                                                            </span>
+                                                            <h2 className="text-2xl font-bold text-zinc-900">
+                                                                {product.name}
+                                                            </h2>
+                                                        </div>
+                                                        <Button size="icon" className="h-12 w-12 rounded-full shadow-lg">
+                                                            <ArrowRight className="size-5" />
+                                                        </Button>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                        </Carousel>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                            </Carousel>
+                        </div>
 
-                        <div className="mt-6 flex justify-center gap-3">
+                        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
                             {storeData.featuredProducts.map((_, index) => (
                                 <button
                                     key={index}
@@ -124,10 +124,9 @@ export default function TopsHero() {
                                         api?.scrollTo(index)
                                         setCurrentSlide(index)
                                     }}
-                                    className={`h-2.5 w-2.5 rounded-full ${currentSlide === index
-                                        ? 'bg-primary scale-125'
-                                        : 'bg-foreground/30'
-                                        }`}
+                                    className={`h-1.5 transition-all duration-500 rounded-full ${
+                                        currentSlide === index ? 'w-10 bg-zinc-900' : 'w-4 bg-zinc-300'
+                                    }`}
                                 />
                             ))}
                         </div>
