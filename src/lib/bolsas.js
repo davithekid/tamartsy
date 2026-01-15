@@ -8,6 +8,10 @@ export const bolsas = [
       '/bolsa.jpeg',
     ],
     category: 'mais vendidos',
+    color: ['Preto'],
+    tamanho: '27x15cm',
+    alca: '22cm',
+    material: 'Fio de Malha'
   },
   {
     id: 2,
@@ -15,19 +19,29 @@ export const bolsas = [
     price: 75,
     description: 'Modelo versátil em crochê, ideal para o dia a dia.',
     images: [
-      '/bolsa-roxa.jpeg',
+      '/bolsa-duo.jpeg',
+      '/bolsa-duo-2.jpeg',
     ],
     category: 'mais vendidos',
+    color: ['Azul Bic', 'Azul Claro', 'Azul Marinho', 'Branco', 'Cinza', 'Lilás', 'Marrom', 'Preto', 'Rosa bebê', 'Rosa empoeirado', 'Rosa Pink', 'Roxo Escuro', 'Vermelho'],
+    tamanho: '27x15cm',
+    alca: '22cm',
+    material: 'Fio de Malha Premium'
   },
   {
     id: 3,
-    title: 'Eclax de Praia',
-    price: 99,
+    title: 'Bolsa Saco',
+    price: 75,
     description: 'Bolsa leve e estilosa, perfeita para dias de sol e praia.',
     images: [
+      '/bolsa-saco.png',
       '/bolsa-praia.jpeg',
     ],
     category: 'mais vendidos',
+    color: ['Preto', 'Amarelo Canário', 'Amarelo Manteiga', 'Azul Claro', 'Azul Marinho', 'Branco', 'Cinza', 'Magenta', 'Off White', 'Rosa bebê', 'Rosa Chiclete', 'Tifanny', 'Verde Bebê', 'Verde Bandeira', 'Verde Militar'],
+    tamanho: '35x35cm',
+    alca: '27cm',
+    material: 'Barbante'
   },
   {
     id: 4,
@@ -35,19 +49,15 @@ export const bolsas = [
     price: 99,
     description: 'Bolsa baguete em crochê com design moderno e elegante.',
     images: [
-      '/bolsa-baguete-batom.jpeg',
-    ],
-    category: 'baguete',
-  },
-  {
-    id: 5,
-    title: 'Bolsa Duo',
-    price: 49,
-    description: 'Versão compacta da Bolsa Duo, prática e cheia de estilo.',
-    images: [
+      '/bolsa-preta.png',
       '/bolsa-camesin.jpeg',
     ],
-    category: 'duo',
+    category: 'baguete',
+    color: ['Azul Bic', 'Azul Claro', 'Azul Marinho', 'Branco', 'Café', 'Cinza', 'Preto', 'Rosa bebê', 'Rosa Empoeirado', "Rosa Pink", "Vermelho"],
+    tamanho: '27x15cm',
+    alca: '22cm',
+    material: 'Fio de Malha'
+
   },
   {
     id: 6,
@@ -58,5 +68,9 @@ export const bolsas = [
       '/bolsa-praia.png',
     ],
     category: 'duo',
+    color: ['Amarelo'],
+    tamanho: '27x15cm',
+    alca: '22cm',
+    material: 'Fio de Malha'
   },
 ];

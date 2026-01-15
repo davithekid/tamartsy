@@ -47,7 +47,7 @@ const Services4Content = () => {
   return (
     <div className="space-y-6">
       <h3 className="text-2xl font-bold tracking-tight text-center lg:text-left pt-6 lg:pt-0">
-        Nossos Objetivos na Missão Crochê
+        Nossos Objetivos 
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {services.map((service, index) => (

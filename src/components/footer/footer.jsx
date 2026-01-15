@@ -14,6 +14,7 @@ import { Field, FieldError } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import { Logo } from "../logo";
 
 const LINK_TYPES = {
   NO_LINK: "NO_LINK",
@@ -115,19 +116,8 @@ const Footer = ({
         <div>
           <div className="flex items-center justify-between gap-4 md:gap-12.5">
             <Separator className="flex-1" />
-            <div className="basis-30 md:basis-37.5">
-              <a href="/">
-                <img
-                  className="block dark:hidden"
-                  src="./mini-logo.svg"
-                  alt="Logo"
-                />
-                <img
-                  className="hidden dark:block"
-                  src="./mini-logo.svg"
-                  alt="Logo"
-                />
-              </a>
+            <div className="">
+             <Logo/>
             </div>
             <Separator className="flex-1" />
           </div>

@@ -11,10 +11,9 @@ import {
 
 const allProducts = [
   { id: 1, title: 'Bolsa Eclipse Lunar', image: './bolsa.jpeg', price: 80, category: 'mais vendidos' },
-  { id: 2, title: 'Bolsa Duo', image: './bolsa-roxa.jpeg', price: 75, category: 'mais vendidos' },
-  { id: 3, title: 'Eclax de Praia', image: './bolsa-praia.jpeg', price: 99, category: 'mais vendidos' },
-  { id: 4, title: 'Bolsa Baguete', image: './bolsa-baguete-batom.jpeg', price: 99, category: 'baguete' },
-  { id: 5, title: 'Bolsa Duo', image: './bolsa-camesin.jpeg', price: 49, category: 'duo' },
+  { id: 2, title: 'Bolsa Duo', image: './bolsa-duo.jpeg', price: 75, category: 'mais vendidos' },
+  { id: 3, title: 'Bolsa Saco', image: './bolsa-saco.png', price: 75, category: 'mais vendidos' },
+  { id: 4, title: 'Bolsa Baguete', image: './bolsa-preta.png', price: 99, category: 'baguete' },
   { id: 6, title: 'Bolsa Praia', image: './bolsa-praia.png', price: 49, category: 'duo' },
 ]
 
@@ -50,6 +49,8 @@ const ProductCard = ({ product }) => (
         </Link>
 
       </Button>
+
+  
     </div>
   </div>
 )
@@ -118,21 +119,6 @@ const ProductCard2 = () => {
             <p className="max-w-[70ch] text-muted-foreground">
               Descubra modelos únicos pra combinar com seu estilo.
             </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${filter === cat
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-secondary text-secondary-foreground hover:bg-muted-foreground/10'
-                  }`}
-              >
-                {cat.charAt(0).toUpperCase() + cat.slice(1)}
-              </button>
-            ))}
           </div>
         </header>
 

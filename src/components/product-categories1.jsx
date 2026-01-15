@@ -1,13 +1,16 @@
 import { cn } from "@/lib/utils";
+import { Button } from "./ui/button";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const PRODUCT_CATEGORIES = {
   title: "Bolsas",
   summary: "Design em crochê, feito à mão, pra quem ama se destacar.",
+  cta: "Explorar Coleção",
   image: {
-    src: "./bolsa.png",
-    srcset:
-      "./bolsa-roxa.jpeg",
-    alt: "",
+    src:
+      "./bolsa-duo.jpeg",
+    alt: "Bolsa de Apresentação",
     sizes: "(min-width: 992px) 992px, 100vw",
   },
 };
@@ -15,6 +18,7 @@ const PRODUCT_CATEGORIES = {
 const ProductCategories1 = ({
   title = PRODUCT_CATEGORIES.title,
   summary = PRODUCT_CATEGORIES.summary,
+  cta = PRODUCT_CATEGORIES.cta,
   image = PRODUCT_CATEGORIES.image,
   className
 }) => {
@@ -31,9 +35,17 @@ const ProductCategories1 = ({
                 {title}
               </h1>
               <p
-                className="animate-in text-center text-lg leading-normal text-balance duration-600 ease-in slide-in-from-bottom-50 fade-in">
+                className="animate-in text-center text-xl leading-normal font-serif text-balance duration-600 ease-in slide-in-from-bottom-50 fade-in">
                 {summary}
               </p>
+              <div className="animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300 pt-2 flex justify-center md:justify-start">
+                <Button asChild size="lg" className="rounded-full px-8 m-auto font-semibold shadow-sm transition-all hover:scale-105">
+                  <Link href={'#vendidas'}>
+                    {cta}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
           <div className="relative h-full overflow-hidden">
