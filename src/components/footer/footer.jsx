@@ -1,256 +1,157 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ChevronUp, Clock, InstagramIcon, LucideIcon, MapPin, Phone } from "lucide-react";
-import { Fragment } from "react";
-import { Controller, useForm } from "react-hook-form";
-import { siInstagram } from "simple-icons";
+import { Instagram, MapPin, Send, ArrowUp } from "lucide-react";
+import { useForm, Controller } from "react-hook-form";
 import z from "zod";
-
 import { cn } from "@/lib/utils";
-
 import { Button } from "@/components/ui/button";
-import { Field, FieldError } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { Logo } from "../logo";
 
-const LINK_TYPES = {
-  NO_LINK: "NO_LINK",
-  PHONE_LINK: "PHONE_LINK",
-  EMAIL_LINK: "EMAIL_LINK",
-};
-
-
-const NEWSLETTER_DATA = {
-  title: "Newsletter",
-};
+const newsletterFormSchema = z.object({
+  email: z.string().email("E-mail inválido"),
+});
 
 const FOOTER_LINKS = [
   {
     title: "Produtos",
     items: [
-      {
-        text: "Bolsas",
-        link: "/bolsas",
-      },
-      {
-        text: "Tops",
-        link: "/tops",
-      },
-      {
-        text: "Headpieces",
-        link: "/headpiece",
-      },
-      {
-        text: "Variados",
-        link: "/variados",
-      }, {
-        text: "Unissex",
-        link: "/unissex",
-      }, {
-        text: "Todos os Produtos",
-        link: "/produtos",
-      },
+      { text: "Bolsas", link: "/bolsas" },
+      { text: "Tops", link: "/tops" },
+      { text: "Headpieces", link: "/headpiece" },
+      { text: "Variados", link: "/variados" },
+      { text: "Unissex", link: "/unissex" },
+      { text: "Ver Todos", link: "/produtos" },
     ],
   },
   {
     title: "Coleções",
     items: [
-      {
-        text: "Carnaval",
-        link: "#",
-      },
+      { text: "Carnaval 2026", link: "#" },
+      { text: "Verão Artsy", link: "#" },
     ],
-  }, {
-    title: "tam artsy",
+  },
+  {
+    title: "Tam Artsy",
     items: [
-      {
-        text: "Sobre",
-        link: "/sobre",
-      },
-      {
-        text: "Contato",
-        link: "/contato",
-      },
+      { text: "Sobre a Marca", link: "/sobre" },
+      { text: "Fale Conosco", link: "/contato" },
+      { text: "Instagram", link: "https://www.instagram.com/tam.artsy/" },
     ],
   },
 ];
 
-const CONTACT_LINKS = {
-  contactDetails: [
-    {
-      icon: MapPin,
-      text: "tamartsy@gmail.com",
-      link: "support@store.com",
-      type: LINK_TYPES.EMAIL_LINK,
-    },
-  ],
-  socialMedia: [
-    {
-      icon: siInstagram,
-      link: "#",
-    },
-  ],
-};
+const Footer = ({ className }) => {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
-const Footer = ({
-  newsletter = NEWSLETTER_DATA,
-  footerLinks = FOOTER_LINKS,
-  contactLinks = CONTACT_LINKS,
-  className,
-}) => {
   return (
-    <section className={cn("pt-8 pb-8 xl:pt-12 bg-black", className)}>
-      <div className=" space-y-10">
-        <div className="ms-6 grid grid-cols-1 gap-x-16 gap-y-8 md:grid-cols-2 xl:grid-cols-5">
-          <div>
-            <NewsletterSection {...newsletter} />
+    <footer className={cn("bg-black text-white pt-20 pb-10 px-6", className)}>
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-12">
+          <div className="lg:col-span-4 space-y-6">
+            <NewsletterSection />
           </div>
-          <FooterLinksSection sections={footerLinks} />
-          <ContactSection links={contactLinks} />
-        </div>
-        <div className="flex justify-between pt-4">
-        </div>
-        <div>
-          <div className="flex items-center justify-between gap-4 md:gap-12.5">
-            <Separator className="flex-1" />
-            <div className="">
-             <Logo/>
-            </div>
-            <Separator className="flex-1" />
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <p className="text-muted max-md:text-xs">
-            Copyright © 2026 Tam Artsy
-          </p>
-          <Separator
-            orientation="vertical"
-            className="!h-4.5 bg-foreground/60 max-sm:hidden"
-          />
-          <p className="max-md:text-xs">Todos os Direitos Reservados</p>
 
+          <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-8">
+            {FOOTER_LINKS.map((section) => (
+              <div key={section.title} className="space-y-6">
+                <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+                  {section.title}
+                </h2>
+                <ul className="space-y-4">
+                  {section.items.map((item) => (
+                    <li key={item.text}>
+                      <Link 
+                        href={item.link} 
+                        className="text-sm text-zinc-400 hover:text-white transition-colors"
+                      >
+                        {item.text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="lg:col-span-2 space-y-6">
+            <h2 className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">Social</h2>
+            <div className="flex gap-4">
+              <Link 
+                href="https://www.instagram.com/tam.artsy/" 
+                target="_blank"
+                className="flex size-10 items-center justify-center rounded-full border border-zinc-800 hover:bg-white hover:text-black transition-all"
+              >
+                <Instagram className="size-5" />
+              </Link>
+              <button 
+                onClick={scrollToTop}
+                className="flex size-10 items-center justify-center rounded-full border border-zinc-800 hover:border-zinc-500 transition-all"
+              >
+                <ArrowUp className="size-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 space-y-8">
+          <div className="flex items-center gap-8">
+            <Separator className="bg-zinc-800 flex-1" />
+            <div className="opacity-50 grayscale hover:grayscale-0 transition-all">
+              <Logo />
+            </div>
+            <Separator className="bg-zinc-800 flex-1" />
+          </div>
+
+          <div className="flex flex-col items-center justify-between gap-4 text-[10px] font-bold uppercase tracking-widest text-zinc-600 md:flex-row">
+            <p>© 2026 Tam Artsy </p>
+           
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 
-const newsletterFormSchema = z.object({
-  email: z.string().email(),
-});
-
-
-const NewsletterSection = ({ title, description }) => {
-  const form = useForm({
+const NewsletterSection = () => {
+  const { control, handleSubmit, reset } = useForm({
     resolver: zodResolver(newsletterFormSchema),
-    defaultValues: {
-      email: "",
-    },
+    defaultValues: { email: "" },
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    console.log("Newsletter:", data);
+    reset();
   };
 
   return (
-    <div className="space-y-6">
-      <div className="space-y-4">
-        <h3 className="font-serif text-3xl leading-none font-medium">
-          {title}
-        </h3>
-        <p className="leading-normal font-light">{description}</p>
-      </div>
-      <form className="space-y-6 mr-3" onSubmit={form.handleSubmit(onSubmit)}>
+    <div className="space-y-4">
+      <h3 className="text-2xl font-black tracking-tighter">
+        Fique por dentro.
+      </h3>
+      <form onSubmit={handleSubmit(onSubmit)} className="relative mt-4 max-w-sm">
         <Controller
           name="email"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <Input
-                {...field}
-                aria-invalid={fieldState.invalid}
-                placeholder="seuemail@exemplo.com"
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
+          control={control}
+          render={({ field }) => (
+            <Input
+              {...field}
+              placeholder="seu@email.com"
+              className="h-12 rounded-full border-zinc-800 bg-zinc-900/50 pr-12 text-white placeholder:text-zinc-600 focus:border-primary"
+            />
           )}
         />
-        <Button className="w-full">Enviar</Button>
+        <Button 
+          type="submit" 
+          size="icon" 
+          className="absolute right-1 top-1 size-10 rounded-full"
+        >
+          <Send className="size-4" />
+        </Button>
       </form>
-    </div>
-  );
-};
-
-const FooterLinksSection = ({ sections }) => {
-  return (
-    <Fragment>
-      {sections.map(({ title, items }) => (
-        <div key={crypto.randomUUID()}>
-          <h2 className="mb-6 text-sm leading-tight font-medium text-muted-foreground uppercase">
-            {title}
-          </h2>
-          <ul className="space-y-3">
-            {items.map(({ text, link }) => (
-              <li key={crypto.randomUUID()}>
-                <a href={link} className="underline-offset-4 hover:underline">
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </Fragment>
-  );
-};
-
-const ContactSection = ({ links }) => {
-  const { socialMedia, contactDetails } = links;
-
-  return (
-    <div>
-      <h2 className="mb-6 text-sm leading-tight font-medium text-muted-foreground uppercase">
-        Contato
-      </h2>
-      <div className="space-y-6">
-        <ul className="space-y-3">
-          {contactDetails.map((item) => (
-            <li className="flex items-center gap-3" key={crypto.randomUUID()}>
-              <item.icon className="size-4 shrink-0 basis-4" />
-              <div className="flex-1">
-                {item.type === LINK_TYPES.NO_LINK ? (
-                  <p>{item.text}</p>
-                ) : (
-                  <a
-                    href={
-                      LINK_TYPES.EMAIL_LINK
-                        ? `mailto:${item.link}`
-                        : `tel:${item.link}`
-                    }
-                    className="underline-offset-4 hover:underline"
-                  >
-                    {item.text}
-                  </a>
-                )}
-              </div>
-            </li>
-          ))}
-        </ul>
-        <ul className="flex flex-wrap gap-3">
-          {socialMedia.map(({ icon, link }) => (
-            <li key={crypto.randomUUID()}>
-              <div className="flex items-center gap-5 text-muted dark:text-primary">
-                <Link href="https://www.instagram.com/tam.artsy/" target="_blank">
-                  <InstagramIcon className="h-5 w-5" />
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
     </div>
   );
 };
