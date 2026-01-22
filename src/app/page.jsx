@@ -11,7 +11,6 @@ export default function Home() {
     <>
       <header>
         <Navbar />
-        {/* <PromoBanner1 />*/}
       </header>
 
       <main className="mx-auto container">

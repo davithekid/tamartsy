@@ -1,95 +1,90 @@
-import { Asterisk, CornerDownRight } from "lucide-react";
+import { Asterisk, ArrowRight } from "lucide-react";
 import React from "react";
-
-import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Process1 = () => {
   const process = [
     {
-      step: "01",
-      title: "Navegue pelos produtos",
+      title: "Navegue pela coleção",
       description:
-        "Explore nossa coleção de peças de crochê feitas à mão. Veja fotos, detalhes e se encante com cada item cuidadosamente produzido.",
+        "Explore nossas peças de crochê feitas à mão. Cada item é único, acompanhado de detalhes que revelam o carinho de cada ponto produzido.",
     },
     {
-      step: "02",
-      title: "Interessou? Entre em contato!",
+      title: "Peça via Instagram",
       description:
-        "Se algum produto chamou sua atenção, envie uma mensagem pelo nosso canal de contato. Tire dúvidas, peça mais informações e finalize sua compra de forma rápida e prática.",
+        "Gostou de algo? Clique no link de contato para falar diretamente comigo. Tire dúvidas sobre cores, tamanhos e personalize sua encomenda.",
     },
     {
-      step: "03",
-      title: "Receba em casa",
+      title: "Receba com carinho",
       description:
-        "Após a compra, nós preparamos sua peça com todo cuidado e entregamos diretamente na sua casa. Qualidade e carinho em cada detalhe!",
+        "Preparamos sua embalagem com todo o cuidado para que a experiência de receber uma peça Tam Artsy seja tão especial quanto a própria peça.",
     },
   ];
 
-
   return (
-    <section className="mt-12">
-      <div className="container">
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-6 ms-4 lg:gap-20">
-          <div className="top-10 col-span-2 h-fit w-fit gap-3 space-y-7 py-8 lg:sticky">
-            <div
-              className="relative w-fit text-5xl font-semibold tracking-tight lg:text-7xl">
-              {" "}
-              <h1 className="w-fit">Nosso processo!</h1>
-              <Asterisk
-                className="absolute -right-2 -top-2 size-5 text-orange-500 md:size-10 lg:-right-14" />
-            </div>
+    <section className="mx-auto max-w-7xl px-6 py-24">
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-6 lg:gap-24">
+        <div className="lg:col-span-2 lg:sticky lg:top-24 h-fit space-y-6">
+          <div className="relative w-fit">
+            <h2 className="text-5xl font-black tracking-tighter md:text-6xl lg:text-7xl">
+              Como <br /> funciona
+            </h2>
+            <Asterisk
+              className="absolute -right-6 -top-2 size-8 text-primary animate-spin-slow" 
+            />
           </div>
-          <ul className="lg:pl-22 relative col-span-4 w-full">
-            {process.map((step, index) => (
-              <li
-                key={index}
-                className="relative flex flex-col justify-between gap-10 border-t py-8 md:flex-row lg:py-10">
-                <Illustration className="absolute right-0 top-4" />
-
-                <div
-                  className="bg-muted flex size-12 items-center justify-center px-4 py-1 tracking-tighter">
-                  0{index + 1}
-                </div>
-                <div className="">
-                  <h3 className="mb-4 text-2xl font-semibold tracking-tighter lg:text-3xl">
-                    {step.title}
-                  </h3>
-                  <p className="text-foreground/50">{step.description}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <p className="text-muted-foreground text-lg font-light leading-relaxed max-w-[20ch]">
+            Três passos simples para ter sua peça exclusiva em mãos.
+          </p>
         </div>
+
+        <ul className="col-span-1 lg:col-span-4 flex flex-col">
+          {process.map((step, index) => (
+            <li
+              key={index}
+              className="group relative flex flex-col gap-8 border-t border-border py-12 md:flex-row md:items-start transition-all hover:bg-muted/5 px-4 rounded-b-xl"
+            >
+              <div
+                className="flex size-14 shrink-0 items-center justify-center rounded-2xl border border-border bg-background text-xl font-black tracking-tighter group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-sm"
+              >
+                0{index + 1}
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold tracking-tight lg:text-3xl flex items-center gap-3">
+                  {step.title}
+                  <ArrowRight className="size-5 opacity-0 -translate-x-4 transition-all group-hover:opacity-30 group-hover:translate-x-0" />
+                </h3>
+                <p className="text-muted-foreground text-lg font-light leading-relaxed max-w-2xl">
+                  {step.description}
+                </p>
+              </div>
+
+              <CustomIllustration className="absolute right-6 top-10 opacity-10 group-hover:opacity-100 transition-opacity" />
+            </li>
+          ))}
+          <div className="border-t border-border" />
+        </ul>
       </div>
     </section>
   );
 };
 
-export { Process1 };
+const CustomIllustration = ({ className }) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={cn("text-primary", className)}
+  >
+    <path d="M7 7h10v10" />
+    <path d="M7 17 17 7" />
+  </svg>
+);
 
-const Illustration = (props) => {
-  return (
-    <svg
-      width="22"
-      height="20"
-      viewBox="0 0 22 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}>
-      <line
-        x1="0.607422"
-        y1="2.57422"
-        x2="21.5762"
-        y2="2.57422"
-        stroke="#FF0000"
-        strokeWidth="4" />
-      <line
-        x1="19.5762"
-        y1="19.624"
-        x2="19.5762"
-        y2="4.57422"
-        stroke="#FF0000"
-        strokeWidth="4" />
-    </svg>
-  );
-};
+export { Process1 };
