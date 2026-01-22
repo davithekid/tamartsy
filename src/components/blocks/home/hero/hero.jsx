@@ -2,7 +2,7 @@ import AnimatedGridPattern from "@/components/ui/animated-grid-pattern"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
-import { ArrowUpRight, CirclePlay } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -19,12 +19,12 @@ export default function Hero() {
         )}
       />
 
-      <div className="relative z-10 mx-auto max-w-3xl text-center">
-        <Badge
+      <div className="relative z-10 mx-auto max-w-3xl text-center py-18 lg:py-0">
+      <Badge
           variant="secondary"
-          className="rounded-full border-border py-1 font-serif"
+          className="mb-8 rounded-full border border-border/50 bg-background/50 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] backdrop-blur-md"
         >
-          desde 2025 <ArrowUpRight className="ml-1 h-4 w-4" />
+           Desde 2025
         </Badge>
 
         <Image
@@ -36,25 +36,31 @@ export default function Hero() {
           className="mx-auto w-[320] sm:w-[420px] md:w-[520px]"
         />
 
-        <p className="mt-4 text-foreground/80 md:text-lg font-serif">
-          Quem tem estilo, usa Tam Artsy.
-        </p>
+       <div className="space-y-4">
+          <p className="mx-auto max-w-[30ch] text-xl font-light italic tracking-tight text-muted-foreground md:text-2xl">
+            Quem tem estilo, usa <span className="font-bold text-foreground not-italic">Tam Artsy</span>.
+          </p>
+        </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
-          <Button size="lg" className="rounded-full text-base" asChild>
+         <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Button 
+            size="lg" 
+            className="h-14 min-w-[180px] rounded-full px-8 text-base font-bold shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95" 
+            asChild
+          >
             <Link href="/produtos">
-              Produtos <ArrowUpRight className="ml-2 h-5 w-5" />
+              Explorar Catálogo <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
 
           <Button
-            variant="outline"
+            variant="ghost"
             size="lg"
-            className="rounded-full text-base shadow-none"
+            className="h-14 min-w-[180px] rounded-full border border-border/40 text-base font-bold transition-all hover:bg-accent"
+            asChild
           >
-            <CirclePlay className="mr-2 h-5 w-5" />
-            <Link href={'/sobre'}>
-              Sobre
+            <Link href="/sobre">
+              Conheça a Loja
             </Link>
           </Button>
         </div>
