@@ -25,7 +25,7 @@ const allProducts = [
   { id: 13, title: 'Cybershot', image: './cyberhsot.png', price: 349, category: 'variados' },
 ]
 
-const categories = ['todos', 'bags', 'etc']
+const categories = ['todos', 'bolsas', 'tops', 'headpieces', 'variados', 'unissex']
 
 const ProductCard = ({ product }) => {
   const productLink = `/produtos/${product.id}`
@@ -125,10 +125,10 @@ const UnissexProdutos = () => {
         <div className="mb-10 flex items-end justify-between border-b pb-6">
           <div className="space-y-1">
             <h2 className="text-5xl font-black tracking-tighter lg:text-6xl">
-              Os mais desejados
+              Queridinhos da Tami
             </h2>
             <p className="text-zinc-500">
-              Para looks cheios de atitude.
+             Campeões de Venda.
             </p>
           </div>
           <Link href="#catalogo" className="hidden text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 lg:block transition-colors">
@@ -146,9 +146,9 @@ const UnissexProdutos = () => {
         <header className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
             <h2 className="text-3xl font-bold tracking-tight ">
-              Catálogo Completo
+              Explore Tudo
             </h2>
-            <p className="text-zinc-500">Explore cada detalhe das nossas criações.</p>
+            <p className="text-zinc-500">Navegue por todos os produtos e encontre sua vibe.</p>
           </div>
 
 
