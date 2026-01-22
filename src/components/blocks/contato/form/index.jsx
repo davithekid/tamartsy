@@ -11,133 +11,110 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import {
   MailIcon,
-  MessageCircle,
-  PhoneIcon,
+  Instagram,
+  SendHorizontal,
 } from "lucide-react"
 import Link from "next/link"
 
 const Contact = () => (
-  <div className="flex min-h-screen items-center justify-center py-20">
-    <div className="mx-auto w-full max-w-(--breakpoint-xl) px-6 xl:px-0">
-
-      <span className="text-sm font-semibold uppercase text-muted-foreground">
-        Entre em contato
-      </span>
-
-      <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">
-        Envie uma mensagem!
-      </h2>
-
-      <p className="mt-3 max-w-[60ch] text-base text-muted-foreground sm:text-lg">
-        Fique à vontade para falar comigo. Vou adorar conhecer sua ideia
-        ou tirar suas dúvidas.
-      </p>
-
-      <div className="mt-16 flex flex-col gap-16 md:gap-10 lg:flex-row">
-        {/* Contact Info */}
-        <div className="grid w-full max-w-3xl items-center grid-cols-1 gap-1 border bg-muted p-1 sm:grid-cols-2 lg:col-span-2 [&>*]:border [&>*]:bg-background [&>*]:p-6">
-
-          <div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl border bg-foreground/5 text-foreground dark:bg-foreground/10">
-              <MailIcon />
-            </div>
-
-            <h3 className="mt-6 text-xl font-semibold">E-mail</h3>
-
-            <p className="my-2.5 text-muted-foreground">
-              Me envie um e-mail que respondo o quanto antes.
-            </p>
-
-            <Link
-              href="mailto:tami@gmail.com"
-              className="font-medium text-primary"
-            >
-              tami@gmail.com
-            </Link>
-          </div>
-
-          <div>
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl border bg-foreground/5 text-foreground dark:bg-foreground/10">
-              <MessageCircle />
-            </div>
-
-            <h3 className="mt-6 text-xl font-semibold">Instagram</h3>
-
-            <p className="my-2.5 text-muted-foreground">
-              Para tirar suas dúvidas ou comprar um item, me chame no instagram!
-            </p>
-
-            <Link
-              href="#"
-              className="font-medium text-primary"
-            >
-              @tam.artsy
-            </Link>
-          </div>
+  <section className="mx-auto max-w-7xl px-6 py-30 lg:py-45">
+    <div className="grid grid-cols-1 gap-x-12 gap-y-16 lg:grid-cols-2">
+      <div className="flex flex-col justify-center space-y-8">
+        <div className="space-y-4">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground">
+            Contato
+          </span>
+          <h2 className="text-4xl font-black tracking-tighter md:text-6xl">
+            Vamos criar algo <br /> único juntos?
+          </h2>
+          <p className="max-w-[45ch] text-lg text-muted-foreground font-light leading-relaxed">
+            Fique à vontade para tirar dúvidas sobre modelos, cores ou encomendas personalizadas. Vou adorar te atender!
+          </p>
         </div>
 
-        <div className="w-full max-w-lg border bg-muted p-1">
-          <Card className="rounded-none shadow-none lg:ms-auto">
-            <CardHeader>
-              <CardTitle>Fale comigo</CardTitle>
-              <CardDescription>
-                Preencha o formulário e entrarei em contato.
-              </CardDescription>
-            </CardHeader>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
+          <Link 
+            href="mailto:tami@gmail.com"
+            className="group flex items-center gap-4 rounded-2xl border p-4 transition-all hover:bg-muted hover:shadow-xl hover:shadow-zinc-200/50"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl shadow-sm border  group-hover:bg-zinc-900 group-hover:text-white transition-colors">
+              <MailIcon className="size-5" />
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-wider ">E-mail</p>
+              <p className="font-semibold ">tami@gmail.com</p>
+            </div>
+          </Link>
 
-            <CardContent className="mt-2">
-              <form>
-                <div className="grid gap-x-8 gap-y-6 md:grid-cols-2">
-
-                  <div>
-                    <Label htmlFor="firstName">Primeiro nome</Label>
-                    <Input
-                      id="firstName"
-                      placeholder="Seu primeiro nome"
-                      className="mt-2 h-10 bg-white shadow-none"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="lastName">Sobrenome</Label>
-                    <Input
-                      id="lastName"
-                      placeholder="Seu sobrenome"
-                      className="mt-2 h-10 bg-white shadow-none"
-                    />
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <Label htmlFor="email">E-mail para contato</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="seu@email.com"
-                      className="mt-2 h-10 bg-white shadow-none"
-                    />
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <Label htmlFor="message">Mensagem</Label>
-                    <Textarea
-                      id="message"
-                      placeholder="Escreva sua mensagem aqui..."
-                      rows={6}
-                      className="mt-2 bg-white shadow-none"
-                    />
-                  </div>
-                </div>
-
-                <Button className="mt-6 w-full" size="lg">
-                  Enviar mensagem
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <Link 
+            href="https://instagram.com/tam.artsy" 
+            target="_blank"
+            className="group flex items-center gap-4 rounded-2xl border p-4 transition-all hover:bg-muted hover:shadow-xl hover:shadow-zinc-200/50"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl shadow-sm border border-zinc-100 group-hover:bg-zinc-900 group-hover:text-white transition-colors">
+              <Instagram className="size-5" />
+            </div>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-wider">Instagram</p>
+              <p className="font-semibold">@tam.artsy</p>
+            </div>
+          </Link>
         </div>
       </div>
+
+      <div className="relative">
+        <div className="absolute -inset-4 rounded-[3rem] lg:-inset-6" />
+        
+        <Card className="relative overflow-hidden rounded-[2rem] border-zinc-200 shadow-2xl shadow-zinc-200/50">
+          <CardHeader className="p-8 pb-4">
+            <CardTitle className="text-2xl font-bold tracking-tight">Mande uma mensagem</CardTitle>
+            <CardDescription className="font-medium">
+              Responderei em até 24 horas úteis.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent className="p-8 pt-0">
+            <form className="space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName" className="text-xs font-bold uppercase tracking-widest px-1">Nome</Label>
+                  <Input
+                    id="firstName"
+                    placeholder="Seu nome"
+                    className="rounded-xl border-zinc-100 bg-zinc-50 focus:bg-white transition-all h-11"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="text-xs font-bold uppercase tracking-widest px-1">E-mail</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="seu@email.com"
+                    className="rounded-xl border-zinc-100 bg-zinc-50 focus:bg-white transition-all h-11"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="message" className="text-xs font-bold uppercase tracking-widest px-1">Mensagem</Label>
+                <Textarea
+                  id="message"
+                  placeholder="Conte um pouco sobre o que você deseja..."
+                  rows={4}
+                  className="rounded-xl border-zinc-100 bg-zinc-50 focus:bg-white transition-all resize-none"
+                />
+              </div>
+
+              <Button className="h-14 w-full rounded-2xl bg-zinc-900 text-white hover:bg-zinc-800 shadow-lg shadow-zinc-200 transition-all active:scale-95 flex gap-2 font-bold">
+                Enviar Mensagem
+                <SendHorizontal className="size-4 opacity-70" />
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
     </div>
-  </div>
+  </section>
 )
 
 export default Contact
