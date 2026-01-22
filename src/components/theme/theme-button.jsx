@@ -1,106 +1,55 @@
 "use client"
 
 import * as React from "react"
-import { Moon, Sun, Laptop } from "lucide-react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => setMounted(true), [])
+  if (!mounted) return null
+
+  const isDark = theme === "dark"
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="
-            relative rounded-full border-border/60
-            bg-background/80 backdrop-blur
-            shadow-sm transition-all
-            hover:bg-muted/60 hover:shadow-md
-            focus-visible:ring-2 focus-visible:ring-primary
-          "
-        >
-          {/* Sun */}
-          <Sun
-            className="
-              h-[1.2rem] w-[1.2rem]
-              rotate-0 scale-100 transition-all duration-300
-              dark:-rotate-90 dark:scale-0
-            "
-          />
-
-          {/* Moon */}
-          <Moon
-            className="
-              absolute h-[1.2rem] w-[1.2rem]
-              rotate-90 scale-0 transition-all duration-300
-              dark:rotate-0 dark:scale-100
-            "
-          />
-
-          <span className="sr-only">Alternar tema</span>
-        </Button>
-      </DropdownMenuTrigger>
-
-      <DropdownMenuContent
-        align="end"
-        className="
-          w-44 rounded-xl border-border/60
-          bg-background/95 p-1 shadow-xl backdrop-blur
-        "
+    <div className="flex items-center justify-center">
+      <button
+        onClick={() => setTheme(isDark ? "light" : "dark")}
+        className={cn(
+          "relative flex h-10 w-20 items-center rounded-full p-1 transition-colors duration-500 shadow-inner border",
+          isDark ? "bg-zinc-900 border-zinc-800" : "bg-zinc-100 border-zinc-200"
+        )}
+        aria-label="Alternar tema"
       >
-        <ThemeItem
-          active={theme === "light"}
-          icon={<Sun className="size-4" />}
-          label="Claro"
-          onClick={() => setTheme("light")}
-        />
-
-        <ThemeItem
-          active={theme === "dark"}
-          icon={<Moon className="size-4" />}
-          label="Escuro"
-          onClick={() => setTheme("dark")}
-        />
-
-        <ThemeItem
-          active={theme === "system"}
-          icon={<Laptop className="size-4" />}
-          label="Sistema"
-          onClick={() => setTheme("system")}
-        />
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
-
-/* ===== Item do menu ===== */
-function ThemeItem({
-  icon,
-  label,
-  active,
-  onClick,
-}) {
-  return (
-    <DropdownMenuItem
-      onClick={onClick}
-      className={`
-        flex items-center gap-3 rounded-lg px-3 py-2 text-sm
-        transition-colors cursor-pointer
-        ${active ? "bg-muted font-medium" : ""}
-      `}
-    >
-      {icon}
-      <span>{label}</span>
-    </DropdownMenuItem>
+        <div className="flex w-full items-center justify-around text-muted-foreground/40">
+          <Sun className={cn("size-4 transition-colors", !isDark && "text-orange-400 opacity-0")} />
+          <Moon className={cn("size-4 transition-colors", isDark && "text-blue-400 opacity-0")} />
+        </div>
+        <motion.div
+          className={cn(
+            "absolute flex size-8 items-center justify-center rounded-full shadow-lg",
+            isDark ? "bg-zinc-800 text-blue-400" : "bg-white text-orange-400"
+          )}
+          initial={false}
+          animate={{
+            x: isDark ? 40 : 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 30,
+          }}
+        >
+          {isDark ? (
+            <Moon className="size-4 fill-current" />
+          ) : (
+            <Sun className="size-4 fill-current" />
+          )}
+        </motion.div>
+      </button>
+    </div>
   )
 }
