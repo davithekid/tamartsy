@@ -12,10 +12,9 @@ import { cn } from '@/lib/utils'
 
 const allProducts = [
   { id: 1, title: 'Shoulder Bag', image: './bag.png', price: 120, category: 'bags', featured: true },
-  { id: 2, title: 'Regata Joy', image: './regata-joy.png', price: 120, category: 'bags', featured: true },
 ]
 
-const categories = ['todos', 'bags', 'etc']
+const categories = ['todos', 'bags']
 
 const ProductCard = ({ product }) => {
   const productLink = `/unissex/${product.id}`
@@ -115,10 +114,10 @@ const UnissexProdutos = () => {
         <div className="mb-10 flex items-end justify-between border-b pb-6">
           <div className="space-y-1">
             <h2 className="text-5xl font-black tracking-tighter lg:text-6xl">
-              Os mais desejados
+             Mais Procurados
             </h2>
             <p className="text-zinc-500">
-              Para looks cheios de atitude.
+              Para fazer a diferença.
             </p>
           </div>
           <Link href="#catalogo" className="hidden text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 lg:block transition-colors">

@@ -8,8 +8,8 @@ import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carouse
 import Link from 'next/link'
 
 const storeData = {
-    title: 'Nada básico.',
-    subtitle: 'Tops em crochê feitos à mão pra quem gosta de se destacar.',
+    title: 'Carregue atitude.',
+    subtitle: 'Autenticidade que se carrega.',
     featuredProducts: [
         {
             id: 1,
